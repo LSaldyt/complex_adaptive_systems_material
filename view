@@ -1,0 +1,2 @@
+#!/bin/bash
+pandoc -o out.pdf proposal.tex && zathura out.pdf
