@@ -64,6 +64,9 @@
     And now, the most advanced cognitive architecture is the LIDA architecture. 
     An interesting consequence of these models is that they should not contain centralized or serialized portions, as these will vastly limit their capability for parallel work. 
     This project will analyze the connectivity of existing models in LIDA: The extend to which they are distributed, how, where, and to what degree clustering occurs, and the transitions and equilibrium points that the model traverses or ends on.
+    The expectation is that the LIDA architecture should show high degrees of distribution, and network metrics comparable to those in "ground truth" systems. 
+    If these expectations are not met, then the cause of this will be isolated and perturbed.
+    Fundamentally, we wish to know the degree to which LIDA is distributed, and how this degree affects performance on cognitively interesting classes.
 
 \section{Importance}
 
@@ -97,9 +100,9 @@
     This analysis will rely on a series of metrics, including:
     \begin{enumerate}
         \item common network metrics, like length and clustering coefficient.
-        \item $\Chi^2$ tests when formulas are varied (see copycat paper)
+        \item $\chi ^2$ tests when formulas are varied (see copycat paper)
         \item runtime, parallelizability factors (ahmdals)
-        \item equilibrium points (see metacat)
+        \item equilibrium points (see metacat, and the looping point caused by the "xyd" problem as well)
     \end{enumerate}
 
 
