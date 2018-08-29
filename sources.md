@@ -12,7 +12,7 @@ The Kanerva Machine: A Generative Distributed Memory
 Yan Wu, Greg Wayne, Alex Graves, Timothy Lillicrap
 Seth Lloyd : The Programmable Universe
 Eric Kandel
-Von Neumann
+Von Neumann (The computer and the brain)
 
 #Separate Interest:
 

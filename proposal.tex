@@ -10,7 +10,7 @@
 
 \bibliographystyle{naturemag}
 
-\title{Distributed Behavior in Cognitive Architectures}
+\title{Distributed Complex Adaptive Behavior in Cognitive Architectures}
 
 %% Notice placement of commas and superscripts and use of &
 %% in the author list
@@ -28,8 +28,11 @@
 
 \begin{abstract}
     Modern cognitive architectures display interesting architectural properties similar to those showed in many distributed systems.
-    This paper will compare the graph-theory metrics from the LIDA cognitive architecture to graph-theory metrics in other distributed systems, like social networks or true neural networks.
-    [...]
+    Distributed nature is a fundamental necessity, given that the human brain is decentralized and displays adaptive properties.
+    In other words, any cognitive architecture that is meant to model what people do must display the same abstract architectural properties that humans do.
+    We build on work done with the copycat cognitive architecture, where it was shown that the emulation of distribution did not fully satisfy expectations.
+    This paper will compare the graph-theory metrics from the LIDA cognitive architecture to graph-theory metrics in other distributed systems, like social networks or true neural networks, and attempt to build or derive the pure mathematical model behind these processes.
+
 %% For Nature, the abstract is really an introductory paragraph set
 %% in bold type.  This paragraph must be ``fully referenced'' and
 %% less than 180 words for Letters.  This is the thing that is
@@ -88,7 +91,8 @@
 
 \section{Work}
 
-    %% 
+    Essentially, my work will be to analyze LIDA in the same way that [Indiana U paper] analyzed brain networks and [Small world paper] analyzed social (etc) networks. 
+    Additionally, I will derive the mathematics describing copycat, or a LIDA implementation of copycat (Specifically, I'd like to look at the formula that control the "movement" of agents within the system -- for example, the "elegance" metric, which decides when to stop processing and decide on an answer). 
 
 \section{Tasks}
 
@@ -99,12 +103,6 @@ Tasks:
 
 \section{Outline}
 
-\section{Old}
-
-%% This project centers around the progression of mathematical models of neural memory, which largely started with the recognition of sparse distributed memory (P Kanerva - 1988),  Advanced methods in neural computing
-%% PD Wasserman, and now is matched by modern [Search].
-
-\section{Recent}
 
 %% []. Any simulation of these processes must also display distributed properties. For example, it should be adaptive (i.e. Plasticity). However, many existing models do not display these properties. Every computer that exists today is based on the Von Neumann architecture. However, Neumann himself delivered a series of lectures discussing the fundamental differences between this classical architecture and the "architecture" of the human (or any) brain. Largely, the underlying
 %% substrate actually has a large effect on the way the models are developed. In principle, it is possible to emulate the brain on a computer, however, some architectural differences are more fundamental then others. I will argue that supercomputing, quantum computing, or neuromorphic architectures are better suited for artificial intelligence: Not only can they speed up classical algorithms, they can be used as the basis for algorithms that better mimic the function of the brain.
