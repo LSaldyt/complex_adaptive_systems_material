@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{einstein}
+\bibinfo{author}{Einstein, A.}
+\newblock \bibinfo{title}{{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})
+  [{On} the electrodynamics of moving bodies]}.
+\newblock \emph{\bibinfo{journal}{Annalen der Physik}}
+  \textbf{\bibinfo{volume}{322}}, \bibinfo{pages}{891--921}
+  (\bibinfo{year}{1905}).
+
+\end{thebibliography}

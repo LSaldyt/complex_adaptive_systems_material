@@ -7,6 +7,9 @@
 
 %% make sure you have the nature.cls and naturemag.bst files where
 %% LaTeX can find them...?
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[nottoc]{tocbibind}
 
 \bibliographystyle{naturemag}
 
@@ -248,5 +251,12 @@ Tasks:
 %% \hline
 %% \end{tabular}
 %% \end{table}
+
+%% Sources and discussion:
+
+This is a citation:
+\cite{einstein}
+
+\bibliography{sources}
 
 \end{document}
