@@ -5,12 +5,9 @@
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{einstein}
-\bibinfo{author}{Einstein, A.}
-\newblock \bibinfo{title}{{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})
-  [{On} the electrodynamics of moving bodies]}.
-\newblock \emph{\bibinfo{journal}{Annalen der Physik}}
-  \textbf{\bibinfo{volume}{322}}, \bibinfo{pages}{891--921}
-  (\bibinfo{year}{1905}).
+\bibitem{pathfinding}
+\bibinfo{author}{Marco~Dorigo, L. M.~G.}
+\newblock \bibinfo{title}{Ant colonies for the travelling salesman problem}.
+\newblock \emph{\bibinfo{journal}{Biosystems}}  (\bibinfo{year}{1997}).
 
 \end{thebibliography}
