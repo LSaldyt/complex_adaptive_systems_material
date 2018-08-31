@@ -252,9 +252,25 @@ Tasks:
 %% \end{tabular}
 %% \end{table}
 
+Today we talked about my current proposal and ways to narrow it down. We talked a lot about social insects, since their behaviour is a great example of a complex adaptive system, and Brian is focusing his project on them. I was originally interested in the complex dynamics of an AI system with many agents. This is pretty abstract though (and probably too much for a semester project), so I've found a way to ground it: There are actually computer algorithms that use social-insect models to accomplish some task. For example, today I found two papers on using "ant colony optimization" to solve the travelling salesman problem. Essentially, we have a large number of unintelligent agents that are able to accomplish a useful task, like finding the optimal path to food. The authors of this paper seem to think that this has broader implications for artificial intelligence, so that's an end-goal I'm interested in.
+
+So, I've done some work in the past on this system called "copycat," (and I uploaded my ancient and unedited paper draft from that). Copycat does distributed problem solving in a similar way to an ant-colony-inspired system. It even has statistical control formulas that have parallels in the paper. It also has something like a distributed perception system (and here is an interesting paper I found on distributed perception in schools of fish). One way to view a system like this is just as a combination of different natural world agents (perceptual agents, processing agents, and action agents, perhaps). It's almost like we mashed together abstract versions of our fish agents and ant agents to create an AI system. I think the analogy of "mashing" is very appropriate though, because what I see is that a lot is being glossed over whenever most software engineers (like myself) create an abstract model like this. Anyway, I would like to focus on a single specific model, and behaviour within it. Today, I was very interested in seeing the model of honeybee castes, which had well documented parameters and differential equations. All of this can be compared to the real system, which seems crucial. Artificial Intelligence systems based on this, though, usually don't do this with as much rigour.
+
+So: let's say I'm interested in the networked behaviour of ants, especially with respect to problem solving (and by problem solving I mean the accomplishment of colony goals, like the acquisition of food or the defending against predators (as in the papers you sent me)). What I'm calling "networked behaviour" or distributed processing is perhaps a little vague: what I mean is the degree to which the ant colony is acting as a whole or acting separately (suppose we create a temporal graph of ant interactions -- how joined or separate is it over time). I'm reminded of an open question I read in a brain network paper: "Are all cognitive processes carried out in distributed networks? Are some cognitive processes carried out in more restricted networks, whereas others recruit larger subsets?". I think the same question can be applied to problem-solving behaviours in social insects (i.e. "Are all problem-solving processes carried out in distributed networks? Are some problem-solving processes carried out in more restricted networks, whereas others recruit larger subsets?"). In computer science language, I'm curious when the colony is acting in serial, and when it is acting in true parallel (and there are metrics to quantify this).
+
+To summarize:
+
+    My research question is "During the problem-solving process, when does the ant colony act as a coherent whole, and when is it entirely parallel?". A problem solving process is, for example, the act of foraging for food or of defending the colony. I'm pretty certain this is manageable in a semester: do you agree, or is there a way I can make this even more specific? (like, say, defining only a single problem-solving task?). If I have time, of course, I'd like to frame my findings in the context of an artificial intelligence system that uses distributed agents.
+    I should currently be:
+        Reviewing differential equations content
+        Writing in citations and literature summaries into my proposal
+        Preparing a presentation for next week
+        Reviewing graph theory, network metrics, and other related math
+
 %% Sources and discussion:
 
 This is a citation:
+
 \cite{pathfinding}
 
 \bibliography{sources}
