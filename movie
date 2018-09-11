@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+import pandas
+
+import matplotlib.pyplot as plt
+import numpy as np
+from moviepy.editor import VideoClip
+from moviepy.video.io.bindings import mplfig_to_npimage
+
+data = pandas.read_csv('data.csv')
+
+frames = max(data.frames)
+fps    = 30
+duration = frames / fps
+
+fig, ax = plt.subplots()
+def make_frame(t):
+    frame = int(t * fps)
+    ax.clear()
+    M = np.zeros((int(max(data.locX)) + 1, int(max(data.locY)) + 1)).astype(float)
+    current_frame_data = data[(data.frames == frame)]
+    for i in current_frame_data['id']:
+        ant_data = current_frame_data[(current_frame_data.id == i)]
+        x = int(list(ant_data['locX'])[0])
+        y = int(list(ant_data['locY'])[0])
+        M[x, y] = 1.0
+    ax.imshow(M)
+    return mplfig_to_npimage(fig)
+
+animation = VideoClip(make_frame, duration=duration)
+animation.write_gif('matplotlib.gif', fps=fps)
