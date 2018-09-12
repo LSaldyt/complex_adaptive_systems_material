@@ -3,6 +3,10 @@ import sys, os
 from glob import glob
 
 def main(args):
+    paper_content = ''
+    for paper in args:
+        with open(paper, 'r') as infile:
+            paper_content += infile.read()
     for filename in glob('sources/*'):
         print(os.path.basename(filename)[:-4])
         with open(filename, 'r') as infile:
@@ -10,7 +14,8 @@ def main(args):
         for line in content.split('\n'):
             if '@' in line:
                 refname = line.split('@')[1].split(',')[0].split('{')[1]
-                print('    ', refname)
+                used = 'x' if refname in paper_content else 'o'
+                print('    ', used, ' ', refname)
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
