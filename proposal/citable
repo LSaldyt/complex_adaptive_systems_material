@@ -3,6 +3,8 @@ import sys, os
 from glob import glob
 
 def main(args):
+    if len(args) == 0:
+        args = ['proposal.tex']
     paper_content = ''
     for paper in args:
         with open(paper, 'r') as infile:

@@ -23,16 +23,19 @@
 \end{affiliations}
 
 \begin{abstract}
-    I am interested in the degree of distribution within ant colonies, and the application of agent-distributed behavior to artificial intelligence.
-    For example, ants at some times cooperate to accomplish hard tasks (like when carrying a large food item), but at other times act more individually.
+    This paper reviews the degree of distribution\cite{saramaki2007generalizations} within ant colonies, and the application of agent-distributed behavior to artificial intelligence \cite{brabazon2016distributed, dorigo2011ant}.
+    Ants at some times cooperate to accomplish hard tasks (like when carrying a large food item), but at other times act more individually\cite{feinerman2017individual}.
     This paper reviews the conditions for centralized or decentralized behavior within a colony, focusing on distributed behavior.
-    For instance, this paper analyzes alarm-response data in ants: The single alarmed ant will recruit other members of its colony, and the signal will propogate to some degree, eventually dying out.
+    Distributed behavior can be analyzed using alarm-response data in ants: A single alarmed ant will recruit other members of its colony, and the signal will propogate to some degree, eventually dying out.
     Depending on the strength of the signal, different networks of the colony are recruited.
     For example, centralized behavior is dependent on caste, and so, often the caretaker ants are harder to recruit during alarm response.
+    Additionally, we are curious how quickly this information can propogate, as has been shown in bees \cite{gernat2018automated}. 
     Similarly, when retrieving food, cooperation is only necessary if the object is very large.
     It seems that the colony is distributed, but becomes more centralized when doing crucial tasks. 
     Degree of distributions is quantified by the clustering coefficient of the ant-network during alarm response.
-    Ideally, the output of this project will be a mathematical model that predicts the clustering coefficient of an ant colony given information about alarm strength (Say, as a function of the number of alarmed scouts).
+    %% Ideally, the output of this project will be 
+    This project constructs a mathematical model that predicts the clustering coefficient of an ant colony given information about alarm strength (Say, as a function of the number of alarmed scouts). 
+    Possible further work will predict additional properties of the information-network.
 
     %% Another interesting idea is the notion of scale: The ants themselves are complex systems, and the colony as a whole is complex. 
 
@@ -48,13 +51,13 @@
 \section{Introduction}
 
 The universal is fundamentally distributed.
-Each element, in essence, computes itself, without relying on other elements [Seth Lloyd].
+Each element, in essence, computes itself, without relying on other elements\cite{lloyd2006programming}.
 However, elements in the universe can group (or "glom") together, forming local interacting clusters of independent elements.
 In this view, local network-clusters of elements act as a coherent whole.
-For concreteness, we will consider the cluster that is an ant colony. 
+Also, even though the network is primarily distributed, certain networks display interesting highly-connected properties\cite{watts_strogatz_2011}.
 Ant colonies display many interesting distributed and clustered behaviors.
 First, individual ants are themselves chaotic. 
-For instance, a single ant that has been disturbed will, when released, trace out an extremely "noisy" path, but one with abstract structure (it traces out its borders and secures its environment).
+A single ant that has been disturbed will, when released, trace out an extremely "noisy" path, but one with abstract structure (it traces out its borders and secures its environment).
 Now, ants themselves have brains -- their brains are also complex adaptive systems, and are not yet fully understood. 
 %% With this view: One who says "The brain is like an ant colony" is saying "The brain is like a colony of smaller brains", "The brain is like a complex network of smaller brains"... what's a base brain, in this recursive scheme?
 In a simplified view, we can view ants as uniform agents, perhaps agents without chaotic properties.
@@ -63,6 +66,11 @@ Even if the ants themselves are not chaotic, the colony as a whole will act chao
 However, the ants themselves are very much chaotic, complecting the analysis of this system further.
 As a whole, the colony is capable of doing coordinated tasks -- there is, again, the emergence of a kind of Order from Chaos (in that the higher-level behavior is more easily described, but emerges from a complex ground-truth). 
 %% Let us say that Order is easily described by a higher-level equation, where chaos is only described by the ground-truth quantum simulation of the system
+
+%% Others have considered the distributed nature of the brain \cite{sporns_2004}
+
+Misc citations: (Ant System) \cite{brabazon2017foraging}, \cite{brabazon2016distributed} \cite{1997} \cite{dorigo_maniezzo_colorni_1996}
+Insects: \cite{heyman2017ants}, \cite{fonio2016locally}, \cite{gelblum2015ant}
 
 \section{Problem(s)}
 
@@ -128,6 +136,6 @@ Brains:
 Insects:
 \cite{fewell_2003}
 
-\bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks}
+\bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks,sources/misc}
 
 \end{document}

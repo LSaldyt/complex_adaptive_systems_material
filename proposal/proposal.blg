@@ -6,44 +6,47 @@ Database file #1: sources/insects.bib
 Database file #2: sources/brains.bib
 Database file #3: sources/ant_system.bib
 Database file #4: sources/networks.bib
-You've used 2 entries,
+Database file #5: sources/misc.bib
+Warning--I didn't find a database entry for "1997"
+You've used 14 entries,
             2348 wiz_defined-function locations,
-            992 strings with 9021 characters,
-and the built_in function-call counts, 600 in all, are:
-= -- 39
-> -- 8
+            1073 strings with 11462 characters,
+and the built_in function-call counts, 5514 in all, are:
+= -- 387
+> -- 124
 < -- 0
-+ -- 4
-- -- 2
-* -- 65
-:= -- 79
-add.period$ -- 7
-call.type$ -- 2
-change.case$ -- 2
++ -- 62
+- -- 31
+* -- 642
+:= -- 606
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 59
-empty$ -- 60
-format.name$ -- 2
-if$ -- 116
+cite$ -- 14
+duplicate$ -- 499
+empty$ -- 542
+format.name$ -- 41
+if$ -- 1140
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 12
-newline$ -- 19
-num.names$ -- 2
-pop$ -- 9
+int.to.str$ -- 14
+missing$ -- 110
+newline$ -- 78
+num.names$ -- 14
+pop$ -- 99
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 8
+skip$ -- 118
 stack$ -- 0
-substring$ -- 15
-swap$ -- 49
+substring$ -- 237
+swap$ -- 473
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 3
-width$ -- 3
-write$ -- 30
+while$ -- 33
+width$ -- 16
+write$ -- 158
+(There was 1 warning)
