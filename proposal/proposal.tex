@@ -23,16 +23,16 @@
 \end{affiliations}
 
 \begin{abstract}
-    This paper reviews the degree of distribution\cite{saramaki2007generalizations} within ant colonies, and the application of agent-distributed behavior to artificial intelligence \cite{brabazon2016distributed, dorigo2011ant}.
+    This paper reviews distributed behavior within ant colonies, and the application of agent-distributed behavior to artificial intelligence \cite{brabazon2016distributed, dorigo2011ant}.
     Ants at some times cooperate to accomplish hard tasks (like when carrying a large food item), but at other times act more individually\cite{feinerman2017individual}.
-    This paper reviews the conditions for centralized or decentralized behavior within a colony, focusing on distributed behavior.
+    This paper reviews the conditions for centralized or decentralized behavior within a colony, and attempts to build a model that predicts the degree of centrality (clustering coefficient) of the ant-network.
     Distributed behavior can be analyzed using alarm-response data in ants: A single alarmed ant will recruit other members of its colony, and the signal will propogate to some degree, eventually dying out.
     Depending on the strength of the signal, different networks of the colony are recruited.
     For example, centralized behavior is dependent on caste, and so, often the caretaker ants are harder to recruit during alarm response.
-    Additionally, we are curious how quickly this information can propogate, as has been shown in bees \cite{gernat2018automated}. 
+    Additionally, this paper investigates how quickly this information can propogate, which is a function of network size and connectivity. 
     Similarly, when retrieving food, cooperation is only necessary if the object is very large.
     It seems that the colony is distributed, but becomes more centralized when doing crucial tasks. 
-    Degree of distributions is quantified by the clustering coefficient of the ant-network during alarm response.
+    Degree of distributions is quantified by the clustering coefficient of the ant-network during alarm response\cite{saramaki2007generalizations}.
     %% Ideally, the output of this project will be 
     This project constructs a mathematical model that predicts the clustering coefficient of an ant colony given information about alarm strength (Say, as a function of the number of alarmed scouts). 
     Possible further work will predict additional properties of the information-network.
@@ -74,24 +74,29 @@ Insects: \cite{heyman2017ants}, \cite{fonio2016locally}, \cite{gelblum2015ant}
 
 \section{Problem(s)}
 
-Given that all interesting natural computations are carried out in a network, we wish to know: 
-"Are all computations carried out in the distributed network? Are some computations carried out in more restricted networks, while others recruit larger subsets?"
-To what degree are particular activities centralized or decentralized?
-What makes it necessary for an activity to be computed distributedly?
-What makes it necessary for an activity to be computed centrally?
-
-We might desire: "A computational study of the powers and limitations of natural distributed algorithms" Specifically, there is a need to "better understand the complexity and evolvability of distributed solutions to different qualities"
-In other words: Why do natural systems (like ants) work this way?
-How is it advantageous?
-How is it disadvantageous?
-Is it a necessary property of any intelligent system?
+What are the advantages of a system that can switch between distributed and centralized states?
+Is this a necessary property?
+(See in-tex comments)
+%% Given that all interesting natural computations are carried out in a network, we wish to know: 
+%% "Are all computations carried out in the distributed network? Are some computations carried out in more restricted networks, while others recruit larger subsets?"
+%% To what degree are particular activities centralized or decentralized?
+%% What makes it necessary for an activity to be computed distributedly?
+%% What makes it necessary for an activity to be computed centrally?
+%% 
+%% We might desire: "A computational study of the powers and limitations of natural distributed algorithms" Specifically, there is a need to "better understand the complexity and evolvability of distributed solutions to different qualities"
+%% In other words: Why do natural systems (like ants) work this way?
+%% How is it advantageous?
+%% How is it disadvantageous?
+%% Is it a necessary property of any intelligent system?
 
 \subsection{Hypothesis:}
-Distributed, adaptive nature IS a necessary property of any intelligent system.
-In other words, it must be possible for the system to work in true parallel.
-A truly capable system MUST be built as a complex network of complex parts, likewise composed, down to an arbitrary depth.
-%% To test this hypothesis, we will create and compare existing cognitive systems, as well as ant colonies../??????????
-[]
+Distributed, adaptive nature is a necessary property of any intelligent system.
+In other words, it must be possible for the system to work in parallel, but also in serial.
+A truly capable system must be built as a complex network of complex parts, likewise composed, down to an arbitrary depth.
+In this way, a system is able to adapt to the difficulty of the current task. 
+Essentially, a distributed network of agents is the best and most efficient way to do a mixture breadth-first and depth-first search.
+When the network ``switches`` between centralized and decentralized states, it is adapting to the problem -- hard problems require cooperation, and banal problems do not.
+%% I wonder if I could use Amos/Tversky multitasking during hard tasks
 
 \section{Discussion Sections:}
 \subsection{Architectural Discrepancy}

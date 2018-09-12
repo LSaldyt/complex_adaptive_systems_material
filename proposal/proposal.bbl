@@ -5,16 +5,6 @@
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{saramaki2007generalizations}
-\bibinfo{author}{Saram{\"a}ki, J.}, \bibinfo{author}{Kivel{\"a}, M.},
-  \bibinfo{author}{Onnela, J.-P.}, \bibinfo{author}{Kaski, K.} \&
-  \bibinfo{author}{Kertesz, J.}
-\newblock \bibinfo{title}{Generalizations of the clustering coefficient to
-  weighted complex networks}.
-\newblock \emph{\bibinfo{journal}{Physical Review E}}
-  \textbf{\bibinfo{volume}{75}}, \bibinfo{pages}{027105}
-  (\bibinfo{year}{2007}).
-
 \bibitem{brabazon2016distributed}
 \bibinfo{author}{Brabazon, A.} \& \bibinfo{author}{Cui, W.}
 \newblock \bibinfo{title}{Distributed perception algorithm}.
@@ -37,14 +27,15 @@
   \textbf{\bibinfo{volume}{220}}, \bibinfo{pages}{73--82}
   (\bibinfo{year}{2017}).
 
-\bibitem{gernat2018automated}
-\bibinfo{author}{Gernat, T.} \emph{et~al.}
-\newblock \bibinfo{title}{Automated monitoring of behavior reveals bursty
-  interaction patterns and rapid spreading dynamics in honeybee social
-  networks}.
-\newblock \emph{\bibinfo{journal}{Proceedings of the National Academy of
-  Sciences}} \textbf{\bibinfo{volume}{115}}, \bibinfo{pages}{1433--1438}
-  (\bibinfo{year}{2018}).
+\bibitem{saramaki2007generalizations}
+\bibinfo{author}{Saram{\"a}ki, J.}, \bibinfo{author}{Kivel{\"a}, M.},
+  \bibinfo{author}{Onnela, J.-P.}, \bibinfo{author}{Kaski, K.} \&
+  \bibinfo{author}{Kertesz, J.}
+\newblock \bibinfo{title}{Generalizations of the clustering coefficient to
+  weighted complex networks}.
+\newblock \emph{\bibinfo{journal}{Physical Review E}}
+  \textbf{\bibinfo{volume}{75}}, \bibinfo{pages}{027105}
+  (\bibinfo{year}{2007}).
 
 \bibitem{lloyd2006programming}
 \bibinfo{author}{Lloyd, S.}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.6.28)  12 SEP 2018 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.6.28)  12 SEP 2018 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -88,13 +88,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Warning: Citation `1997' on page 2 undefined on input line 72.
 
 [2] [3] [4] (./proposal.bbl [5] [6]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 112.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 103.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 108--113
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
 []\OT1/ptm/m/n/12 Fewell, J. H.  So-cial in-sect net-works.  \OT1/ptm/m/it/12 S
 ci-ence \OT1/ptm/m/n/12 (2003).  URL
  []
@@ -103,15 +103,12 @@ ci-ence \OT1/ptm/m/n/12 (2003).  URL
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 572 strings out of 492649
- 6980 string characters out of 6135778
- 65929 words of memory out of 5000000
- 4490 multiletter control sequences out of 15000+600000
+ 571 strings out of 492649
+ 6959 string characters out of 6135778
+ 63929 words of memory out of 5000000
+ 4489 multiletter control sequences out of 15000+600000
  20103 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,4n,21p,332b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -121,7 +118,7 @@ rier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
 r/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proposal.pdf (7 pages, 94535 bytes).
+Output written on proposal.pdf (7 pages, 93741 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream
