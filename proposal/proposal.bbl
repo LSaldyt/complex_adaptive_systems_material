@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{koch_1999}
+\bibinfo{author}{Koch, C.}
+\newblock \bibinfo{title}{Complexity and the nervous system}.
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{284}}
+  (\bibinfo{year}{1999}).
+
+\bibitem{fewell_2003}
+\bibinfo{author}{Fewell, J.~H.}
+\newblock \bibinfo{title}{Social insect networks}.
+\newblock \emph{\bibinfo{journal}{Science}}  (\bibinfo{year}{2003}).
+\newblock
+  \urlprefix\url{http://science.sciencemag.org/content/301/5641/1867/tab-pdf}.
+
+\end{thebibliography}

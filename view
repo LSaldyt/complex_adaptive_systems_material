@@ -1,4 +1,0 @@
-#!/bin/bash
-pdflatex proposal/proposal.tex
-bibtex proposal/proposal
-pdflatex proposal/proposal.tex && zathura proposal.pdf && rm *.aux *.log
