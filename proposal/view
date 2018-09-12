@@ -1,4 +1,4 @@
 #!/bin/bash
 pdflatex proposal.tex
-bibtex proposal
+bibtex proposal #--include-directory="sources/" proposal
 pdflatex proposal.tex && zathura proposal.pdf

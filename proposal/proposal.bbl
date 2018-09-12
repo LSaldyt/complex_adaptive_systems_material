@@ -8,8 +8,8 @@
 \bibitem{koch_1999}
 \bibinfo{author}{Koch, C.}
 \newblock \bibinfo{title}{Complexity and the nervous system}.
-\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{284}}
-  (\bibinfo{year}{1999}).
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{284}},
+  \bibinfo{pages}{96--98} (\bibinfo{year}{1999}).
 
 \bibitem{fewell_2003}
 \bibinfo{author}{Fewell, J.~H.}

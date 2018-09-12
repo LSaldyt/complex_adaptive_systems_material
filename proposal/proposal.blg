@@ -2,50 +2,48 @@ This is BibTeX, Version 0.99d (TeX Live 2018/Arch Linux)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: proposal.aux
 The style file: naturemag.bst
-Database file #1: sources.bib
-Illegal end of database file---line 31 of file sources.bib
- : @article{koch_1999, title={Complexity and the Nervous System}, volume={284}, doi={10.1126/science.284.5411.96}, number={5411}, journal={Science}, author={Koch, C.}, year={1999}, pages={96-98}
- :                                                                                                                                                                                                
-I'm skipping whatever remains of this entry
+Database file #1: sources/insects.bib
+Database file #2: sources/brains.bib
+Database file #3: sources/ant_system.bib
+Database file #4: sources/networks.bib
 You've used 2 entries,
             2348 wiz_defined-function locations,
-            988 strings with 8960 characters,
-and the built_in function-call counts, 528 in all, are:
-= -- 33
+            992 strings with 9021 characters,
+and the built_in function-call counts, 600 in all, are:
+= -- 39
 > -- 8
 < -- 0
 + -- 4
 - -- 2
-* -- 54
-:= -- 73
+* -- 65
+:= -- 79
 add.period$ -- 7
 call.type$ -- 2
 change.case$ -- 2
 chr.to.int$ -- 0
 cite$ -- 2
-duplicate$ -- 56
-empty$ -- 52
+duplicate$ -- 59
+empty$ -- 60
 format.name$ -- 2
-if$ -- 100
+if$ -- 116
 int.to.chr$ -- 0
 int.to.str$ -- 2
-missing$ -- 11
+missing$ -- 12
 newline$ -- 19
 num.names$ -- 2
-pop$ -- 10
+pop$ -- 9
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 8
 stack$ -- 0
-substring$ -- 0
-swap$ -- 43
+substring$ -- 15
+swap$ -- 49
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 2
+while$ -- 3
 width$ -- 3
 write$ -- 30
-(There was 1 error message)
