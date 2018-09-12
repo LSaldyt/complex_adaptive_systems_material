@@ -1,4 +1,4 @@
 #!/bin/bash
-pdflatex proposal_mark_2.tex
-bibtex proposal_mark_2
-pdflatex proposal_mark_2.tex && zathura proposal_mark_2.pdf
+pdflatex proposal/proposal.tex
+bibtex proposal/proposal
+pdflatex proposal/proposal.tex && zathura proposal.pdf && rm *.aux *.log
