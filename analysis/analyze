@@ -18,11 +18,11 @@ plt.figure(figsize=(480/my_dpi, 480/my_dpi), dpi=my_dpi)
 excluded = {19}
 for i in set(data['id']):
     if i not in excluded:
-        plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['locX'], marker='', color='blue', linewidth=.5, alpha=0.2)
-        plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['locY'], marker='', color='orange', linewidth=.5, alpha=0.2)
+        #plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['locX'], marker='', color='blue', linewidth=.5, alpha=0.2)
+        plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['speed (px/s)'], marker='', color='black', linewidth=.5, alpha=0.2)
 for i in excluded:
-    plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['locX'], marker='', color='purple', linewidth=1, alpha=1.0)
-    plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['locY'], marker='', color='red', linewidth=1, alpha=1.0)
+    #plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['locX'], marker='', color='purple', linewidth=1, alpha=1.0)
+    plt.plot(data[(data.id == i)]['frames'], data[(data.id == i)]['speed (px/s)'], marker='', color='red', linewidth=1, alpha=1.0)
 
 # Change xlim
 # plt.xlim(0,12)

@@ -1,0 +1,86 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{koch_1999}
+\bibinfo{author}{Koch, C.}
+\newblock \bibinfo{title}{Complexity and the nervous system}.
+\newblock \emph{\bibinfo{journal}{Science}} \textbf{\bibinfo{volume}{284}},
+  \bibinfo{pages}{96--98} (\bibinfo{year}{1999}).
+
+\bibitem{gelblum2015ant}
+\bibinfo{author}{Gelblum, A.} \emph{et~al.}
+\newblock \bibinfo{title}{Ant groups optimally amplify the effect of
+  transiently informed individuals}.
+\newblock \emph{\bibinfo{journal}{Nature communications}}
+  \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{7729} (\bibinfo{year}{2015}).
+
+\bibitem{fewell_2003}
+\bibinfo{author}{Fewell, J.~H.}
+\newblock \bibinfo{title}{Social insect networks}.
+\newblock \emph{\bibinfo{journal}{Science}}  (\bibinfo{year}{2003}).
+\newblock
+  \urlprefix\url{http://science.sciencemag.org/content/301/5641/1867/tab-pdf}.
+
+\bibitem{feinerman2017individual}
+\bibinfo{author}{Feinerman, O.} \& \bibinfo{author}{Korman, A.}
+\newblock \bibinfo{title}{Individual versus collective cognition in social
+  insects}.
+\newblock \emph{\bibinfo{journal}{Journal of Experimental Biology}}
+  \textbf{\bibinfo{volume}{220}}, \bibinfo{pages}{73--82}
+  (\bibinfo{year}{2017}).
+
+\bibitem{gernat2018automated}
+\bibinfo{author}{Gernat, T.} \emph{et~al.}
+\newblock \bibinfo{title}{Automated monitoring of behavior reveals bursty
+  interaction patterns and rapid spreading dynamics in honeybee social
+  networks}.
+\newblock \emph{\bibinfo{journal}{Proceedings of the National Academy of
+  Sciences}} \textbf{\bibinfo{volume}{115}}, \bibinfo{pages}{1433--1438}
+  (\bibinfo{year}{2018}).
+
+\bibitem{heyman2017ants}
+\bibinfo{author}{Heyman, Y.}, \bibinfo{author}{Shental, N.},
+  \bibinfo{author}{Brandis, A.}, \bibinfo{author}{Hefetz, A.} \&
+  \bibinfo{author}{Feinerman, O.}
+\newblock \bibinfo{title}{Ants regulate colony spatial organization using
+  multiple chemical road-signs}.
+\newblock \emph{\bibinfo{journal}{Nature communications}}
+  \textbf{\bibinfo{volume}{8}}, \bibinfo{pages}{15414} (\bibinfo{year}{2017}).
+
+\bibitem{fonio2016locally}
+\bibinfo{author}{Fonio, E.} \emph{et~al.}
+\newblock \bibinfo{title}{A locally-blazed ant trail achieves efficient
+  collective navigation despite limited information}.
+\newblock \emph{\bibinfo{journal}{eLife}} \textbf{\bibinfo{volume}{5}},
+  \bibinfo{pages}{e20185} (\bibinfo{year}{2016}).
+
+\bibitem{sporns_2004}
+\bibinfo{author}{Olaf~Sporns, M. K. C.~C., Dante~R.Chialvo}.
+\newblock \bibinfo{title}{Organization, development and function of complex
+  brain networks}.
+\newblock \emph{\bibinfo{journal}{Trends in cognitive sciences}}
+  \textbf{\bibinfo{volume}{8}}, \bibinfo{pages}{418--425}
+  (\bibinfo{year}{2004}).
+\newblock \urlprefix\url{https://doi.org/10.1016/j.tics.2004.07.008}.
+
+\bibitem{watts_strogatz_2011}
+\bibinfo{author}{Watts, D.~J.} \& \bibinfo{author}{Strogatz, S.~H.}
+\newblock \bibinfo{title}{Collective dynamics of small-world networks}.
+\newblock \emph{\bibinfo{journal}{The Structure and Dynamics of Networks}}
+  (\bibinfo{year}{2011}).
+
+\bibitem{saramaki2007generalizations}
+\bibinfo{author}{Saram{\"a}ki, J.}, \bibinfo{author}{Kivel{\"a}, M.},
+  \bibinfo{author}{Onnela, J.-P.}, \bibinfo{author}{Kaski, K.} \&
+  \bibinfo{author}{Kertesz, J.}
+\newblock \bibinfo{title}{Generalizations of the clustering coefficient to
+  weighted complex networks}.
+\newblock \emph{\bibinfo{journal}{Physical Review E}}
+  \textbf{\bibinfo{volume}{75}}, \bibinfo{pages}{027105}
+  (\bibinfo{year}{2007}).
+
+\end{thebibliography}
