@@ -1,2 +1,5 @@
 *.pdf
 feh*
+*.csv
+analysis/*.csv
+analysis/modified.csv
