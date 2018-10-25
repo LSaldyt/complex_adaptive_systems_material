@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+import os, sys
+from functools import partial
+from collections import defaultdict
+from copy import deepcopy
+
+import pickle
+import pandas
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+ids    = list(range(61))
+color     = 'black'
+alpha     = 0.8
+linewidth = 1.0
+dense     = False
+
+sns.set('poster', style='whitegrid')
+
+def main(args):
+    assert len(args) == 1, 'Usage: ./time_interactions [data.csv]'
+    filename = args[0]
+
+    interactions = defaultdict(list)
+    with open(filename, 'r') as infile:
+        lines = infile.read().split('\n')
+        for line in lines[1:]:
+            if line.strip() != '':
+                #t, a, b = list(map(lambda s : int(s.strip()), line.split(',')))
+                b, a, t = list(map(lambda s : int(s.strip()), line.split(',')))
+                interactions[t].append((a, b))
+
+    frames = list(range(max(interactions.keys())))
+
+    active= 0
+    activeY = []
+    signal_paths = {}
+
+    for i in frames:
+        if i in interactions:
+            for interaction in interactions[i]:
+                source, destination = interaction
+                if source in signal_paths:
+                    signal_paths[destination] = deepcopy(signal_paths[source])
+                    if not dense:
+                        del signal_paths[source]
+                else:
+                    signal_paths[destination] = [] 
+                active += 1
+        for i in signal_paths:
+            signal_paths[i].append(i)
+        activeY.append(active)
+
+    for signal_path in signal_paths.values():
+        lendiff = len(frames) - len(signal_path)
+        x = frames[lendiff:]
+        plt.plot(x, signal_path, marker='', color=color, linewidth=linewidth, alpha=alpha)
+
+    for i in ids:
+        plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.8)
+
+    time_unit_label = 'Frames (30hz)'
+    
+    plt.title('Temporal network interactions')
+    plt.xlabel(time_unit_label)
+    plt.ylim(0, 61)
+    plt.ylabel('Ant ID')
+    plt.show()
+
+    plt.plot(frames, activeY)
+    plt.title('Active ants over time')
+    plt.xlabel(time_unit_label)
+    plt.ylim(0, 61)
+    plt.ylabel('Active ants')
+    plt.show()
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))

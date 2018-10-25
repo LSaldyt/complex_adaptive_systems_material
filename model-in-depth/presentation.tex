@@ -1,0 +1,195 @@
+
+\documentclass{beamer}
+\usetheme{owl}           % Use metropolis theme
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\title{Overview of Themnothorax decision model (Stephen Pratt \& Mallon et al 2001-2005)}
+\date{\today}
+\author{Lucas Saldyt}
+\institute{Arizona State University}
+
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\makeatletter
+\def\mcolor#1#{\@mcolor{#1}}
+\def\@mcolor#1#2#3{%
+  \protect\leavevmode
+  \begingroup
+    \color#1{#2}#3%
+  \endgroup
+}
+\makeatother
+
+\newcommand{\annotate}[3]{
+\mcolor{#1}{\overbrace{#3}^\text{#2}}
+}
+
+\newcommand{\sitem}[1]
+{
+    \begin{itemize}
+        \item #1
+    \end{itemize}
+}
+
+\bibliographystyle{naturemag}
+
+\definecolor{orange}{HTML}{f7c767}
+\definecolor{blue}{HTML}{67E6F7}
+\definecolor{green}{HTML}{bdf767}
+\definecolor{purple}{HTML}{f467f7}
+\definecolor{red}{HTML}{fc4475}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+  \maketitle
+
+  \begin{frame}{Research Questions (Mallon 2001)}
+      \begin{itemize}
+          \item How does less efficient recruitment affect decision making?
+              \sitem{\mcolor{red}{Graded assessment} affects the colony feedback loop}
+          \item What proportion of comparison is by individuals as opposed to at the colony level? 
+          \sitem{\mcolor{red}{$86\%, 46\%, 32\%$} for different colonies.}
+          \sitem{Direct comparison is \mcolor{red}{not crucial} for choosing the optimal site}
+          \item What physical observations act as cues for behavior? 
+              \sitem{\mcolor{red}{Nestmate interaction rate} for estimation of colony/environment state}
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Research Questions (Pratt 2002)}
+      \begin{itemize}
+          \item What is the purpose of multiple recruitment mechanisms? (Pratt 2002, 2005)
+              \sitem{Tandem runs allow route learning and pheromone depositing}
+              \sitem{\mcolor{red}{Graded commitment} allows error-correction and optimal decision making.}
+              \sitem{Recruitment \mcolor{red}{accelerates} when transport begins ($3x$ speed)}
+          \item How do individuals choose between recruitment mechanisms? (Pratt 2005)
+              \sitem{Transports preffered once \mcolor{red}{quorum} is met}
+          \item How does decentralization happen without direct comparison? (Pratt 2005)
+              \sitem{Recruit to better sites faster $\rightarrow$ \mcolor{red}{positive feedback}}
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Research Questions (Pratt 2002)}
+      \begin{itemize}
+          \item What is the purpose of the reverse-tandem mechanism? (Yet unanswered) (Pratt 2005)
+              \sitem{Stimulate transport by idle workers}
+              \sitem{Fix nest-splitting that may occur in nature}
+          \item What is the purpose of the quorum requirement? (Pratt 2002)
+              \sitem{Assists optimal choice without direct comparison}
+              \sitem{Mistake correction mechanism}
+              \sitem{Minimize colony splitting}
+              \sitem{Selection of an individual ant's ``home`` nest}
+          \item How is quorum detected? (Pratt 2002)
+              \sitem{Ants likely use rate estimation rather than literal counting}
+          \item Important parts of the decision process occur at the individual level
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}{2002 Model Overview}
+      Models colony of $N$ ants, where proportion $p$ are active. \\
+      $M$ sites (in practice $~2-12$ sites). \\
+      Four population classes: 
+      \begin{itemize}
+          \item $S$: Searching (At destroyed nest or between nests) \mcolor{red}{(Initially $N$)}
+          \item $A_i$: Assessing a nest $i$ \mcolor{red}{(Initially 0)}
+          \item $R_i$: Recruiting to a nest $i$ \mcolor{red}{(Initially 0)}
+          \item $P_i$: The passive population at nest i \mcolor{red}{($P_0 = N, P_i = 0$)}
+      \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}{Overview of Pratt 2002 Equations (Colors showing flow of ant population)}
+      \Large
+      \begin{equation}
+      \begin{aligned}
+          & \frac{dS}{dt} = - \sum_{j=1}^M \mcolor{orange}{u_jS} - \sum_{j=1}^M \mcolor{purple}{\lambda_jI(R_j, S)} \\
+          & \frac{dA_i}{dt} = \mcolor{orange}{u_iS} + \mcolor{purple}{\lambda_jI(R_j, S)} + \sum_{j \neq i}^M \mcolor{blue}{(\rho_{ji}A_j - \rho_{ij}A_i)} - \mcolor{green}{k_iA_i} \\
+          & \frac{dR_i}{dt} = \mcolor{green}{k_iA_i} + \sum_{j \neq i}^M \mcolor{blue}{(\rho_{ji}R_j - \rho_{ij}R_i)} \\
+          & \frac{dP_i}{dt} = \phi_iJ(R_i, P_0)
+      \end{aligned}
+      \end{equation}
+  \end{frame}
+
+  \begin{frame}{Search population}
+      \Large
+      \begin{multline}
+      \frac{dS}{dt} = - \sum_{j=1}^M \annotate{orange}{Rate of finding nest $j$}{u_j}*S \\  
+      - \sum_{j=1}^M \annotate{purple}{Ants led by tandem run}{\lambda_jI(R_j, S)} 
+      \end{multline}
+  \end{frame}
+  \begin{frame}{Assessment population}
+      \Large
+      \begin{multline}
+      \frac{dA_i}{dt} = \annotate{orange}{Ants that find nest $i$ and begin assessing it}{u_iS} \\ 
+      + \annotate{purple}{Ants led by tandem run}{\lambda_jI(R_j, S)} \\
+      + \sum_{j \neq i}^M \annotate{blue}{Ants encountering alternative sites}{(\rho_{ji}A_j - \rho_{ij}A_i)} \\ 
+      - \annotate{green}{Ants that become recruiters}{k_iA_i} \\
+      \end{multline}
+  \end{frame}
+  \begin{frame}{Recruitment population}
+      \Large
+      \begin{multline}
+          \frac{dR_i}{dt} = \annotate{green}{Ants that become recruiters}{k_iA_i} \\
+          + \sum_{j \neq i}^M \annotate{blue}{Ants encountering alternative sites}{(\rho_{ji}R_j - \rho_{ij}R_i)}
+      \end{multline}
+  \end{frame}
+  \begin{frame}{Passive population}
+      \Large
+      \begin{equation}
+          \frac{dP_i}{dt} = \underbrace{\annotate{red}{Per capita transport rate}{\phi_i} * \annotate{red}{Quorum requirement}{J(R_i, P_0)}}_\text{Carried passive ants}
+      \end{equation}
+  \end{frame}
+  \begin{frame}{Auxilary Functions}
+      \Large
+      Tandem/Carrying switching rule:
+      \begin{equation}
+          I(R_i, S) = 
+          \begin{cases}
+              & R_i,  \text{ if } \annotate{red}{Recruiters below threshold}{R_i < T} \\
+              &       \text{     and } \annotate{red}{While there are recruitable ants}{S > 0}\\
+              & 0, \text{ otherwise}
+          \end{cases}
+      \end{equation}
+  \end{frame}
+
+  \begin{frame}{Auxilary Functions}
+      \Large
+      Quorum rule:
+      \begin{equation}
+          J(R_i, P_0) = 
+          \begin{cases}
+              & 0,  \text{ if } \annotate{red}{Recruiters below threshold}{R_i < T} \\  
+              &     \text{     or } \annotate{red}{Edge case: migration has finished}{P_0 = 0}\\
+              & R_i, \text{ otherwise}
+          \end{cases}
+      \end{equation}
+  \end{frame}
+
+  \begin{frame}{Assumptions}
+      \begin{itemize}
+          \item Ants always move exclusively out of the searching state
+          \item Finding/Recruitment/Switching/Conversion rates are all constant per nest
+          \item Requires detailed parameter estimation
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Diagram of ODE model (Pratt 2002)}
+      \includegraphics[scale=1.0]{diagram}
+  \end{frame}
+
+  \begin{frame}{The agent based model (Pratt 2005)}
+      \includegraphics[scale=1.6]{agent}
+  \end{frame}
+
+  \begin{frame}{Differences between the models}
+      \begin{itemize}
+          \item 
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Bibliography}
+      \bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks,sources/misc}
+  \end{frame}
+
+\end{document}

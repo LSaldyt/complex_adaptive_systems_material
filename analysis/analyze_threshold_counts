@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+import os
+from functools import partial
+
+import pickle
+import pandas
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+from collections import defaultdict
+
+sns.set(style="whitegrid")
+
+data = pandas.read_csv('processed.csv')
+
+for i in range(1, 10):
+    threshold = 100 * i
+    data['clustering'] = data['count_{}'.format(threshold)] / max(data['id'])
+
+    processed = data.groupby(['frames']).mean().reset_index()
+    if threshold == 400:
+        color = 'orange'
+    else:
+        color = 'black'
+    alpha = 1.0
+    linewidth = 2.0
+    plt.plot(processed['frames'], processed['clustering'], marker='', color=color, linewidth=linewidth, alpha=alpha)
+plt.title('Average percents over time for different thresholds (Thresholds = multiples of ten)')
+plt.xlabel('Frames (Taken at 30hz)')
+plt.ylabel('Percentage of ants within threshold distance of one another (threshold in pixel distance)')
+plt.show()

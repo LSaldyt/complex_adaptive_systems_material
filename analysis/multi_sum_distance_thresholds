@@ -14,7 +14,7 @@ from sum_distance_thresholds import main as sum_thresholds
 
 def main(args):
     for i in range(1, 10):
-        threshold = 100 * i
+        threshold = 10 * i
         sum_thresholds(['processed.csv', 'processed.csv', threshold])
     return 0
 
