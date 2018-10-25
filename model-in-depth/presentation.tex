@@ -72,17 +72,17 @@
 
   \begin{frame}{Research Questions (Pratt 2002)}
       \begin{itemize}
-          \item What is the purpose of the reverse-tandem mechanism? (Yet unanswered) (Pratt 2005)
+          \item What is the purpose of the reverse-tandem mechanism?
               \sitem{Stimulate transport by idle workers}
-              \sitem{Fix nest-splitting that may occur in nature}
-          \item What is the purpose of the quorum requirement? (Pratt 2002)
+              \sitem{Fix nest-splitting that may occur in nature (More likely)}
+          \item What is the purpose of the quorum requirement?
               \sitem{Assists optimal choice without direct comparison}
               \sitem{Mistake correction mechanism}
               \sitem{Minimize colony splitting}
               \sitem{Selection of an individual ant's ``home`` nest}
-          \item How is quorum detected? (Pratt 2002)
-              \sitem{Ants likely use rate estimation rather than literal counting}
-          \item Important parts of the decision process occur at the individual level
+          \item How is quorum detected?
+              \sitem{Ants likely use \mcolor{red}{rate estimation} rather than literal counting}
+          \item \mcolor{red}{\em{Important parts of the decision process occur at the individual level}}
       \end{itemize}
   \end{frame}
 
@@ -182,9 +182,16 @@
       \includegraphics[scale=1.6]{agent}
   \end{frame}
 
-  \begin{frame}{Differences between the models}
+  \begin{frame}{Important differences between the models (In order of subjective importance)}
       \begin{itemize}
-          \item 
+          \item Ants remember their ``home`` nest.
+          \item Commitment level is separated from individual actions 
+              \sitem{(i.e. an ant can follow even in the committed state)}
+              \sitem{Also allows for further parameterization}
+          \item Intentionally makes the model more brittle so that it can be further tested empirically. 
+              \sitem{A general model is potentially harder to disprove}
+          \item Adds a simple ``at-nest`` action 
+          \item Minute differences (potential for ants to get lost)
       \end{itemize}
   \end{frame}
 
