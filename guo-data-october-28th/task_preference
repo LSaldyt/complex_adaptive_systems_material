@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+import os
+from functools import partial
+
+import pickle
+import pandas
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+from collections import defaultdict
+
+sns.set(style="whitegrid")
+
+def read_preference_data():
+    preference_data = pandas.read_csv('TaskPreference/TaskPreferences-C45.csv')
+    preference_data = preference_data.set_index('Task')
+
+    rows = preference_data.axes[0].tolist()
+    def score_column(c):
+        key = max(enumerate(preference_data[c]), key=lambda t : t[1])[0]
+        return rows[key]
+
+    order = sorted(preference_data.columns.values, key=score_column)
+    preference_data = preference_data[list(order)]
+    return preference_data
+
+def read_alarm_data():
+    alarm_data = pandas.read_csv('AlarmStrengthPredicted/AlarmResults30FramesRandomForest-C45TA1T-Reframe-try-Copy.csv')
+    return alarm_data.set_index('Second')
+
+def read_threshold_data():
+    threshold_data = pandas.read_csv('Propagation process/ThresholdDistribution-C45TA1T.csv')
+    threshold_data = threshold_data.set_index('Id')
+    threshold_data = threshold_data.fillna(0.0)
+    return threshold_data
+
+preference_data = read_preference_data() # Task preference strengths
+alarm_data      = read_alarm_data()      # Alarm strength per second
+alarm_data      = alarm_data[['V' + key for key in preference_data.columns.values]]
+
+threshold_data = read_threshold_data()
+threshold_data = threshold_data.T
+threshold_data = threshold_data[[int(s.strip()) for s in preference_data.columns.values]]
+
+fig, (ax1, ax2) = plt.subplots(nrows=2, sharex=True)
+sns.heatmap(threshold_data, xticklabels=threshold_data.columns.values, ax=ax1)
+sns.heatmap(preference_data, xticklabels=preference_data.columns.values, ax=ax2)
+plt.show()
+print(preference_data)
