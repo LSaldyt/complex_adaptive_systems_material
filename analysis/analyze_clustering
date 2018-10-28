@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+import os
+from functools import partial
+
+import pickle
+import pandas
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+from collections import defaultdict
+
+sns.set(style="whitegrid")
+
+data = pandas.read_csv('processed.csv')
+
+# Clustering coefficient: [sum weights of closed triangles] / [sum weights of open triangles]
+
+threshold = 45
+
+selected_frames = []
+coefficients = []
+ids = list(sorted(map(int, set(data['id']))))
+for frame in sorted(set(data['frames'])):
+    closed_sum = 0
+    open_sum   = 0
+    if frame % 50 == 0:
+        frame_data = data[(data.frames == frame)]
+        for i in ids:
+            ant_data = frame_data[(frame_data.id == i)]
+            for j in ids[i:]:
+                second_ant_data = frame_data[(frame_data.id == j)]
+                for k in ids[i:][j:]:
+                    dij = ant_data['d{}'.format(j)].iloc[0]
+                    dik = ant_data['d{}'.format(k)].iloc[0]
+                    djk = second_ant_data['d{}'.format(k)].iloc[0]
+                    closed =  dij < threshold and dik < threshold and djk < threshold
+                    #opened =  dij < threshold and dik < threshold
+                    #elif opened:
+                    if closed:
+                        closed_sum += sum((dij, dik, djk))
+                    else:
+                        open_sum += sum((dij, dik, djk))
+        print(frame)
+        selected_frames.append(frame)
+        coefficients.append(closed_sum / max(open_sum, 1))
+
+
+color = 'orange'
+alpha = 1.0
+linewidth = 2.0
+plt.plot(selected_frames, coefficients, marker='', color=color, linewidth=linewidth, alpha=alpha)
+plt.title('Clustering coefficient over time')
+plt.xlabel('Frames (Taken at 30hz)')
+plt.ylabel('Clustering coefficient (closed triangles / open triangles)')
+plt.show()
