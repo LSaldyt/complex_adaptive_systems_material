@@ -12,15 +12,20 @@ from collections import defaultdict
 
 sns.set(style="whitegrid")
 
-def read_preference_data():
+def read_preference_data(score_only=False):
     preference_data = pandas.read_csv('TaskPreference/TaskPreferences-C45.csv')
     preference_data = preference_data.set_index('Task')
 
     rows = preference_data.axes[0].tolist()
-    def score_column(c):
-        key = max(enumerate(preference_data[c]), key=lambda t : t[1])[0]
-        return rows[key]
+    maximum = preference_data.max().max()
 
+    def score_column(c):
+        key, score = max(enumerate(preference_data[c]), key=lambda t : t[1])
+        if score_only:
+            return score
+        return (rows[key], score)
+
+    preference_data = preference_data.divide(maximum)
     order = sorted(preference_data.columns.values, key=score_column)
     preference_data = preference_data[list(order)]
     return preference_data
@@ -33,18 +38,54 @@ def read_threshold_data():
     threshold_data = pandas.read_csv('Propagation process/ThresholdDistribution-C45TA1T.csv')
     threshold_data = threshold_data.set_index('Id')
     threshold_data = threshold_data.fillna(0.0)
+    threshold_data = threshold_data.T
     return threshold_data
 
-preference_data = read_preference_data() # Task preference strengths
-alarm_data      = read_alarm_data()      # Alarm strength per second
-alarm_data      = alarm_data[['V' + key for key in preference_data.columns.values]]
+def read_general_data():
+    general_data = pandas.read_csv('general_data.csv')
+    return general_data
 
-threshold_data = read_threshold_data()
-threshold_data = threshold_data.T
-threshold_data = threshold_data[[int(s.strip()) for s in preference_data.columns.values]]
+def main():
+    by = 'task' # {'task', 'threshold', 'alarm', 'threshold-estimation-strength'}
+    #by = 'threshold-estimation-strength'
+    by = 'threshold'
 
-fig, (ax1, ax2) = plt.subplots(nrows=2, sharex=True)
-sns.heatmap(threshold_data, xticklabels=threshold_data.columns.values, ax=ax1)
-sns.heatmap(preference_data, xticklabels=preference_data.columns.values, ax=ax2)
-plt.show()
-print(preference_data)
+    preference_data = read_preference_data(score_only=by=='threshold-estimation-strength') # Task preference strengths
+    alarm_data      = read_alarm_data()      # Alarm strength per second
+    threshold_data  = read_threshold_data()  # Estimated threshold
+    general_data    = read_general_data()
+
+    if by == 'task' or by == 'threshold-estimation-strength':
+        sortby = [str(s) for s in preference_data.columns.values]
+    elif by == 'threshold':
+        def compare(key):
+            return threshold_data[key]['Threshold']
+        sortby  = list(sorted(threshold_data.columns.values, key=compare))
+    elif by == 'alarm':
+        def compare(key):
+            print(alarm_data[key].sum())
+            return alarm_data[key].sum()
+        sortby = list(sorted(alarm_data.columns.values, key=compare))
+        sortby = [s[1:] for s in sortby]
+
+    print(sortby)
+    speed_data = general_data.pivot_table(index='frames', columns='id', values='speed (px/s)')
+    orientation_data = general_data.pivot_table(index='frames', columns='id', values='orientation')
+    speed_data       = speed_data[[int(s) for s in sortby]]
+    orientation_data = orientation_data[[int(s) for s in sortby]]
+    alarm_data      = alarm_data[['V' + str(key) for key in sortby]]
+    threshold_data  = threshold_data[[int(s) for s in sortby]]
+    preference_data = preference_data[list(map(str, sortby))]
+
+    fig, (ax1, ax2, ax3, ax4, ax5) = plt.subplots(nrows=5, sharex=True)
+    fig.subplots_adjust(hspace=0.0)
+    global_kwargs = dict(cbar=True,cbar_kws={"shrink": .82}, vmin=0.0, vmax=1.0)
+    sns.heatmap(threshold_data, xticklabels=threshold_data.columns.values, ax=ax1, **global_kwargs)
+    sns.heatmap(orientation_data, xticklabels=preference_data.columns.values, cbar=True, cbar_kws={'shrink' : 0.82}, ax=ax2)
+    sns.heatmap(speed_data, xticklabels=preference_data.columns.values, cbar=True, cbar_kws={'shrink' : 0.82}, ax=ax3)
+    sns.heatmap(alarm_data, xticklabels=alarm_data.columns.values, ax=ax4, **global_kwargs)
+    sns.heatmap(preference_data, xticklabels=preference_data.columns.values, yticklabels=['Walk', 'Idle', 'Food', 'Social-Interaction', 'Self-Maintainance', 'Trash', 'Brood'], ax=ax5, **global_kwargs)
+    plt.show()
+    print(preference_data)
+
+main()
