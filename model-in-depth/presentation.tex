@@ -1,4 +1,3 @@
-
 \documentclass{beamer}
 \usetheme{owl}           % Use metropolis theme
 \newcommand\tab[1][1cm]{\hspace*{#1}}
@@ -44,14 +43,27 @@
 
 \begin{document}
   \maketitle
+  \begin{frame}{Introduction}
+      \begin{columns}
+          \begin{column}{0.5\textwidth}
+              \begin{itemize}
+                  \item Temnothorax Albipennis prefers to live in rock crevasses, and emigrates frequently.
+                  \item Emigration decision behavior is decentralized and self-organizing, and therefore interesting.
+              \end{itemize}
+          \end{column}
+          \begin{column}{0.5\textwidth}
+              \includegraphics[scale=1.0]{americanus}
+          \end{column}
+      \end{columns}
+  \end{frame}
 
   \begin{frame}{Research Questions (Mallon 2001)}
       \begin{itemize}
-          \item How does less efficient recruitment affect decision making?
+          \item How does small colony size affect decision making?
               \sitem{\mcolor{red}{Graded assessment} affects the colony feedback loop}
           \item What proportion of comparison is by individuals as opposed to at the colony level? 
           \sitem{\mcolor{red}{$86\%, 46\%, 32\%$} for different colonies.}
-          \sitem{Direct comparison is \mcolor{red}{not crucial} for choosing the optimal site}
+          \sitem{Direct comparison is \mcolor{red}{not crucial} for choosing the optimal site and therefore the decision is \mcolor{red}{decentralized}}
           \item What physical observations act as cues for behavior? 
               \sitem{\mcolor{red}{Nestmate interaction rate} for estimation of colony/environment state}
       \end{itemize}
@@ -106,7 +118,7 @@
           & \frac{dS}{dt} = - \sum_{j=1}^M \mcolor{orange}{u_jS} - \sum_{j=1}^M \mcolor{purple}{\lambda_jI(R_j, S)} \\
           & \frac{dA_i}{dt} = \mcolor{orange}{u_iS} + \mcolor{purple}{\lambda_jI(R_j, S)} + \sum_{j \neq i}^M \mcolor{blue}{(\rho_{ji}A_j - \rho_{ij}A_i)} - \mcolor{green}{k_iA_i} \\
           & \frac{dR_i}{dt} = \mcolor{green}{k_iA_i} + \sum_{j \neq i}^M \mcolor{blue}{(\rho_{ji}R_j - \rho_{ij}R_i)} \\
-          & \frac{dP_i}{dt} = \phi_iJ(R_i, P_0)
+          & \frac{dP_i}{dt} = \annotate{red}{Causes overflow if unchecked}{\phi_iJ(R_i, P_0)} - \annotate{white}{Fix: Subtract moved ants}{\phi_{dest}J(R_{dest},P_0)}
       \end{aligned}
       \end{equation}
   \end{frame}
