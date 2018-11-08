@@ -42,42 +42,62 @@
 \maketitle
 
 \begin{abstract}
-    Abstract goes here.
+    Ants of the genus Temnothorax display the captivating ability to choose optimally between nest sites in an entirely decentralized, error correcting, and self-organizing process.
+    First, this paper reviews previous models of Temnothorax decision making, and attempts to simplify and then analyze them.
+    Specifically, it shows that previous agent based models can be expressed with far fewer states and transitions. 
+    It also extends previous models of population dynamics.
+    Secondly, this paper aims to evaluate the degree to which ant decision making can be adopted for use in a cognitive architecture, and to refactor cognitive architectures with respect to decentralized computation as it occurs in nature.
+    %% It also aims to evaluate the rough analogy of the brain to an ant colony, and to highlight the specific mechanisms (such as decentralization) that appear in both systems.
 \end{abstract}
 
 \section{Introduction}
-  \maketitle
-  \begin{itemize}
-      \item Temnothorax Albipennis prefers to live in rock crevasses, and emigrates frequently.
-      \item Emigration decision behavior is decentralized and self-organizing, and therefore interesting.
-  \end{itemize}
+Ant-decision making has been an active area of research since [TODO: When was the first literature mentioned? 1967?]. 
+However, this paper focuses on more recent work, especially that by Mallon, Pratt, [TODO: List full].
 
-  %% {Research Questions (Mallon 2001)}
-  \begin{itemize}
-      \item How does small colony size affect decision making?
-          \sitem{\mcolor{red}{Graded assessment} affects the colony feedback loop}
-      \item What proportion of comparison is by individuals as opposed to at the colony level? 
-      \sitem{\mcolor{red}{$86\%, 46\%, 32\%$} for different colonies.}
-      \sitem{Direct comparison is \mcolor{red}{not crucial} for choosing the optimal site and therefore the decision is \mcolor{red}{decentralized}}
-      \item What physical observations act as cues for behavior? 
-          \sitem{\mcolor{red}{Nestmate interaction rate} for estimation of colony/environment state}
-  \end{itemize}
-  %% \end{frame}
+\subsection{Research Questions (Mallon 2001)}
 
-  %% \begin{frame}{Research Questions (Pratt 2002)}
-      \begin{itemize}
-          \item What is the purpose of multiple recruitment mechanisms? (Pratt 2002, 2005)
-              \sitem{Tandem runs allow route learning and pheromone depositing}
-              \sitem{\mcolor{red}{Graded commitment} allows error-correction and optimal decision making.}
-              \sitem{Recruitment \mcolor{red}{accelerates} when transport begins ($3x$ speed)}
-          \item How do individuals choose between recruitment mechanisms? (Pratt 2005)
-              \sitem{Transports preffered once \mcolor{red}{quorum} is met}
-          \item How does decentralization happen without direct comparison? (Pratt 2005)
-              \sitem{Recruit to better sites faster $\rightarrow$ \mcolor{red}{positive feedback}}
-      \end{itemize}
-  %% \end{frame}
+Nest choice is deeper than may initially seem.
+First of all, Temnothorax Albipennis colonies generally have relatively small sizes [TODO: Cite estimate], which in theory limits decision making ability [TODO: Cite mallon 2001], but in practice does not. 
+Ants are able to use graded assessment to make decisions efficiently even though their colony size is small.
 
-  %% \begin{frame}{Research Questions (Pratt 2002)}
+Additionally, a small number of comparisons are actually made between colonies. 
+Mallon 2001 publishes three experiments with $86\%, 46\%$ and $32\%$ direct comparison, which indicates the presence of decentralized behavior.
+Ants seem to use peer rate estimation to decide on the quality of a particular colony: instead of counting the number of ants at a colony, they estimate the total number from the frequency of ants (if many ants are seen over a brief period of time, then an ant knows that the current location has a large number of ants).
+
+%% \begin{itemize}
+%%     \item How does small colony size affect decision making?
+%%         \sitem{\mcolor{red}{Graded assessment} affects the colony feedback loop}
+%%     \item What proportion of comparison is by individuals as opposed to at the colony level? 
+%%     \sitem{\mcolor{red}{$86\%, 46\%, 32\%$} for different colonies.}
+%%     \sitem{Direct comparison is \mcolor{red}{not crucial} for choosing the optimal site and therefore the decision is \mcolor{red}{decentralized}}
+%%     \item What physical observations act as cues for behavior? 
+%%         \sitem{\mcolor{red}{Nestmate interaction rate} for estimation of colony/environment state}
+%% \end{itemize}
+
+When deciding on nests, ants actually use a variety of different recruiting mechanisms: Direct tandem runs (leading of other ants), transportations (carrying of other ants), and reverse tandem runs (leading of other ants, but in the opposite direction). 
+Early work set out to describe the purpose and importance of each of these mechanisms.
+
+\subsection{Research Questions (Pratt 2002, 2005)}
+
+Each recruitment mechanism has different advantages. Tandem running allows learning of the route to a nest as well as the deposition of pheromones along the route. 
+Later in the decision process, ants switch to ``transport`` recruitment, where they literally carry other ants. 
+This mechanism triggers when ants know that a destination nest has a large number of ants (is above the quorum, or threshold, which is estimated by encounter rate).
+
+Faster recruitment to better sites allows decentralized optimal choice without direct comparison.
+In other words, when an ant encounters a good site, it recruits to that site very quickly, which causes positive feedback when subsequent ants encounter and recruit to the same site.
+This can be seen in the population equations from [TODO cite Pratt 2002], where incoming ants depend on the number of recruiting ants.
+
+%%        \begin{itemize}
+%%            \item What is the purpose of multiple recruitment mechanisms? (Pratt 2002, 2005)
+%%                \sitem{Tandem runs allow route learning and pheromone depositing}
+%%                \sitem{\mcolor{red}{Graded commitment} allows error-correction and optimal decision making.}
+%%                \sitem{Recruitment \mcolor{red}{accelerates} when transport begins ($3x$ speed)}
+%%            \item How do individuals choose between recruitment mechanisms? (Pratt 2005)
+%%                \sitem{Transports preffered once \mcolor{red}{quorum} is met}
+%%            \item How does decentralization happen without direct comparison? (Pratt 2005)
+%%                \sitem{Recruit to better sites faster $\rightarrow$ \mcolor{red}{positive feedback}}
+%%        \end{itemize}
+
       \begin{itemize}
           \item What is the purpose of the reverse-tandem mechanism?
               \sitem{Stimulate transport by idle workers}
@@ -91,9 +111,8 @@
               \sitem{Ants likely use \mcolor{red}{rate estimation} rather than literal counting}
           \item \mcolor{red}{\em{Important parts of the decision process occur at the individual level}}
       \end{itemize}
-  %% \end{frame}
 
-  %% \begin{frame}{2002 Model Overview}
+  \subsection{2002 Model Overview}
       Models colony of $N$ ants, where proportion $p$ are active. \\
       $M$ sites (in practice $~2-12$ sites). \\
       Four population classes: 
@@ -103,10 +122,8 @@
           \item $R_i$: Recruiting to a nest $i$ \mcolor{red}{(Initially 0)}
           \item $P_i$: The passive population at nest i \mcolor{red}{($P_0 = N(1-p), P_i = 0$)}
       \end{itemize}
-  %% \end{frame}
 
-
-  %% \begin{frame}{Overview of Pratt 2002 Equations (Colors showing flow of ant population)}
+  \subsection{Overview of Pratt 2002 Equations (Colors showing flow of ant population)}
       \Large
       \begin{equation}
       \begin{aligned}
@@ -116,16 +133,13 @@
           & \frac{dP_i}{dt} = \annotate{red}{Causes overflow if unchecked}{\phi_iJ(R_i, P_0)} - \annotate{white}{Fix: Subtract moved ants}{\phi_{dest}J(R_{dest},P_0)}
       \end{aligned}
       \end{equation}
-  %% \end{frame}
-
-  %% \begin{frame}{Search population}
+  \subsection{Search population}
       \Large
       \begin{multline}
       \frac{dS}{dt} = - \sum_{j=1}^M \annotate{orange}{Rate of finding nest $j$}{u_j}*S \\  
       - \sum_{j=1}^M \annotate{purple}{Ants led by tandem run}{\lambda_jI(R_j, S)} 
       \end{multline}
-  %% \end{frame}
-  %% \begin{frame}{Assessment population}
+  \subsection{Assessment population}
       \Large
       \begin{multline}
       \frac{dA_i}{dt} = \annotate{orange}{Ants that find nest $i$ and begin assessing it}{u_iS} \\ 
@@ -133,21 +147,18 @@
       + \sum_{j \neq i}^M \annotate{blue}{Ants encountering alternative sites}{(\rho_{ji}A_j - \rho_{ij}A_i)} \\ 
       - \annotate{green}{Ants that become recruiters}{k_iA_i} \\
       \end{multline}
-  %% \end{frame}
-  %% \begin{frame}{Recruitment population}
+  \subsection{Recruitment population}
       \Large
       \begin{multline}
           \frac{dR_i}{dt} = \annotate{green}{Ants that become recruiters}{k_iA_i} \\
           + \sum_{j \neq i}^M \annotate{blue}{Ants encountering alternative sites}{(\rho_{ji}R_j - \rho_{ij}R_i)}
       \end{multline}
-  %% \end{frame}
-  %% \begin{frame}{Passive population}
+  \subsection{Passive population}
       \Large
       \begin{equation}
           \frac{dP_i}{dt} = \underbrace{\annotate{red}{Per capita transport rate}{\phi_i} * \annotate{red}{Quorum requirement}{J(R_i, P_0)}}_\text{Carried passive ants}
       \end{equation}
-  %% \end{frame}
-  %% \begin{frame}{Auxilary Functions}
+  \subsection{Auxilary Functions}
       \Large
       Tandem/Carrying switching rule:
       \begin{equation}
@@ -158,9 +169,8 @@
               & 0, \text{ otherwise}
           \end{cases}
       \end{equation}
-  %% \end{frame}
 
-  %% \begin{frame}{Auxilary Functions}
+  \subsection{Auxilary Functions}
       \Large
       Quorum rule:
       \begin{equation}
@@ -171,25 +181,19 @@
               & R_i, \text{ otherwise}
           \end{cases}
       \end{equation}
-  %% \end{frame}
 
-  %% \begin{frame}{Assumptions}
+  \subsection{Assumptions}
       \begin{itemize}
           \item Ants always move exclusively out of the searching state
           \item Finding/Recruitment/Switching/Conversion rates are all constant per nest
           \item Requires detailed parameter estimation
       \end{itemize}
-  %% \end{frame}
 
-  %% \begin{frame}{Diagram of ODE model (Pratt 2002)}
-      %% \includegraphics[scale=1.0]{diagram}
-  %% \end{frame}
+  \subsection{Diagram of ODE model (Pratt 2002)}
 
-  %% \begin{frame}{The agent based model (Pratt 2005)}
-      %% \includegraphics[scale=1.6]{agent}
-  %% \end{frame}
+  \subsection{The agent based model (Pratt 2005)}
 
-  %% \begin{frame}{Important differences between the models (In order of subjective importance)}
+  \subsection{Important differences between the models (In order of subjective importance)}
       \begin{itemize}
           \item Ants remember their ``home`` nest.
           \item Commitment level is separated from individual actions 
@@ -200,12 +204,65 @@
           \item Adds a simple ``at-nest`` action 
           \item Minute differences (potential for ants to get lost)
       \end{itemize}
-  %% \end{frame}
 
-  %% \begin{frame}{Bibliography}
+  \subsection{Proposed Model}
+
+  The proposed model begins with an improved set of ordinary differential equations, based on [TODO: Cite Pratt 2002].
+  It contains equations for five separate populations: 
+  \begin{itemize}
+      \item $S$, the searching population (not at any nest)
+      \item $A_i$, the assessing population at nest $i$
+      \item $L_i$, the leading (forward-tandem-running) population at nest $i$
+      \item $C_i$, the carrying (transport) population at nest $i$
+      \item $P_i$, the passive population at nest $i$. 
+  \end{itemize}
+  The model focuses on the following:
+  \begin{itemize}
+      \item Splitting the $R_i$ population from S. Pratt 2002 into the $L_i$ and $C_i$ populations.
+      \item Replacing the two switching equations $I()$ and $J()$ with dynamics switching between $L_i$ and $C_i$ based on a single switching equation $Q()$.
+      \item Fixing unchecked growth in the original $P_i$ equations.
+      \item Allowing transport of various passive populations, which will allow a split passive population to be fixed.
+      \item Replacing switching in $A_i$ and $R_i$ with transitions to searching population. This reflects updates in S.Pratt 2005 and Granovskiy 2012 agent-based models.
+      \item Adding transportation of the active searching population (but not the assessing, leading, or carrying populations).
+  \end{itemize}
+
+  Given $N$ ants, where proportion $p$ are active, the initial states are the following:
+  \begin{itemize}
+      \item $S = pN$
+      \item $P_0 = (1-p)N$ 
+      \item $A_i, L_i, C_i, P_i = 0$ 
+  \end{itemize}
+
+  The original model used the following parameters:\\
+
+\begin{tabular}{ l | r }
+    \hline
+  $\mu_i$     & Likelihood of finding nest $i$\\
+  $\lambda_i$ & Proportion led by leaders to $i$\\
+  $\rho_{ij}$ & Switching rates between nests $i$ and $j$\\
+  $k_i$       & Acceptance probability for nest $i$\\
+  $\phi_i$    & Rate for carrying passive ants to nest $i$\\
+    \hline
+\end{tabular} \\
+
+The updated model builds on this list, but renames old parameters to make them more intuitive: \\
+
+\begin{tabular}{ l | c | c | r }
+    \hline
+  Name & 2002 & 2005 & Description $i$\\ \hline
+  $\phi_i$      & $\mu_i$     &  & Finding nest $i$\\
+  $\lambda_i$   & $\lambda_i$ &  & Led by leaders to $i$\\
+  $\alpha_i$    & $k_i$       &  & Assessors who accept nest $i$\\ \hline
+  $\tau_{Pi}$   & $\phi_i$    &  & Passive ants are transported\\
+  $\tau_{Si}$   & \em{New}    &  & Searching ants are transported\\ \hline
+  $\sigma_{Ai}$ & \em{New}    &  & Assessing ants enter search\\
+  $\sigma_{Li}$ & \em{New}    &  & Leading ants enter search\\
+  $\sigma_{Ci}$ & \em{New}    &  & Carrying ants enter search\\
+  \hline
+\end{tabular} \\
+
+  \subsection{Bibliography}
       \bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks,sources/misc}
-  %% \end{frame}
-
 
 \footnotesize
 \bibliographystyle{apalike}

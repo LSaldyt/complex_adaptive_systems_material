@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  7 NOV 2018 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  8 NOV 2018 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -474,69 +474,100 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 102.
+
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
-[][]\OT1/ptm/m/n/10 Nestmate in-ter-ac-tion rate[] for es-ti-ma-tion of
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 72--72
-[]\OT1/ptm/m/n/10 Recruitment []ac-cel-er-ates[] when trans-port be-gins ($\OT1
-/cmr/m/n/10 3\OML/cmm/m/it/10 x$
- []
-
-
-Overfull \hbox (26.74448pt too wide) detected at line 118
-[][]
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+Overfull \hbox (26.74448pt too wide) detected at line 135
+[][]
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 []\OT1/ptm/m/n/12 Finding/Recruitment/Switching/Conversion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--247
+
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 248--249
+[]\OT1/ptm/m/n/12 The up-dated model builds on this list, but
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 248--249
+\OT1/ptm/m/n/12 re-names old pa-ram-e-ters to make them more
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Overfull \hbox (40.21976pt too wide) in paragraph at lines 250--263
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--263
+
  []
 
 No file report.bbl.
 No file report.bbl.
-[2] (./report.aux) ) 
+[3] [4
+
+] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 12646 strings out of 492642
- 249944 string characters out of 6135566
- 307648 words of memory out of 5000000
- 16287 multiletter control sequences out of 15000+600000
- 21420 words of font info for 46 fonts, out of 8000000 for 9000
+ 12653 strings out of 492642
+ 250040 string characters out of 6135566
+ 305648 words of memory out of 5000000
+ 16292 multiletter control sequences out of 15000+600000
+ 25237 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,67p,415b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/u
-rw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (2 pages, 135976 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (4 pages, 148987 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
