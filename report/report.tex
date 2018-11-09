@@ -43,18 +43,17 @@
 
 \begin{abstract}
     Ants of the genus Temnothorax display the captivating ability to choose optimally between nest sites in an entirely decentralized, error correcting, and self-organizing process.
-    First, this paper reviews previous models of Temnothorax decision making, and attempts to simplify and then analyze them.
+    First, this paper reviews previous models of Temnothorax decision making, and simplifies and then analyzes them.
     Specifically, it shows that previous agent based models can be expressed with far fewer states and transitions. 
     It also extends previous models of population dynamics.
-    Secondly, this paper aims to evaluate the degree to which ant decision making can be adopted for use in a cognitive architecture, and to refactor cognitive architectures with respect to decentralized computation as it occurs in nature.
-    %% It also aims to evaluate the rough analogy of the brain to an ant colony, and to highlight the specific mechanisms (such as decentralization) that appear in both systems.
+    Secondly, this paper aims to evaluate the applications of this behavior to computer science.
 \end{abstract}
 
 \section{Introduction}
-Ant-decision making has been an active area of research since [TODO: When was the first literature mentioned? 1967?]. 
-However, this paper focuses on more recent work, especially that by Mallon, Pratt, [TODO: List full].
 
-\subsection{Research Questions (Mallon 2001)}
+Temnothorax nest choice is worth studying because decentralized and self-organizing algorithms are  
+
+\subsection{Summary (Mallon 2001)}
 
 Nest choice is deeper than may initially seem.
 First of all, Temnothorax Albipennis colonies generally have relatively small sizes [TODO: Cite estimate], which in theory limits decision making ability [TODO: Cite mallon 2001], but in practice does not. 
@@ -77,7 +76,7 @@ Ants seem to use peer rate estimation to decide on the quality of a particular c
 When deciding on nests, ants actually use a variety of different recruiting mechanisms: Direct tandem runs (leading of other ants), transportations (carrying of other ants), and reverse tandem runs (leading of other ants, but in the opposite direction). 
 Early work set out to describe the purpose and importance of each of these mechanisms.
 
-\subsection{Research Questions (Pratt 2002, 2005)}
+\subsection{Summary (Pratt 2002, 2005)}
 
 Each recruitment mechanism has different advantages. Tandem running allows learning of the route to a nest as well as the deposition of pheromones along the route. 
 Later in the decision process, ants switch to ``transport`` recruitment, where they literally carry other ants. 
@@ -98,65 +97,63 @@ This can be seen in the population equations from [TODO cite Pratt 2002], where 
 %%                \sitem{Recruit to better sites faster $\rightarrow$ \mcolor{red}{positive feedback}}
 %%        \end{itemize}
 
-      \begin{itemize}
-          \item What is the purpose of the reverse-tandem mechanism?
-              \sitem{Stimulate transport by idle workers}
-              \sitem{Fix nest-splitting that may occur in nature (More likely)}
-          \item What is the purpose of the quorum requirement?
-              \sitem{Assists optimal choice without direct comparison}
-              \sitem{Mistake correction mechanism}
-              \sitem{Minimize colony splitting}
-              \sitem{Selection of an individual ant's ``home`` nest}
-          \item How is quorum detected?
-              \sitem{Ants likely use \mcolor{red}{rate estimation} rather than literal counting}
-          \item \mcolor{red}{\em{Important parts of the decision process occur at the individual level}}
-      \end{itemize}
+Reverse tandem runs had no single explaining mechanism, but it was hypothesized that they either stimulated transport by idle workers, or fixed nest-splitting that would be more common in nature than in the lab.
+The quorum requirement seems to assist the ants in making optimal choices by acting as a general error correction mechanism --- it delays decision making in case ants have chosen a sub-optimal nest, and this decreases the likelihood of colony splitting.
+
+
+%%       \begin{itemize}
+%%               \sitem{Selection of an individual ant's ``home`` nest}
+%%           \item How is quorum detected?
+%%               \sitem{Ants likely use \mcolor{red}{rate estimation} rather than literal counting}
+%%           \item \mcolor{red}{\em{Important parts of the decision process occur at the individual level}}
+%%       \end{itemize}
+\section{Previous models}
 
   \subsection{2002 Model Overview}
-      Models colony of $N$ ants, where proportion $p$ are active. \\
+  S.Pratt 2002 contains an ODE model, which models a colony of $N$ ants, where proportion $p$ are active. \\
       $M$ sites (in practice $~2-12$ sites). \\
       Four population classes: 
       \begin{itemize}
-          \item $S$: Searching (At destroyed nest or between nests) \mcolor{red}{(Initially $Np$)}
-          \item $A_i$: Assessing a nest $i$ \mcolor{red}{(Initially 0)}
-          \item $R_i$: Recruiting to a nest $i$ \mcolor{red}{(Initially 0)}
-          \item $P_i$: The passive population at nest i \mcolor{red}{($P_0 = N(1-p), P_i = 0$)}
+          \item $S$: Searching (At destroyed nest or between nests) \mcolor{black}{(Initially $Np$)}
+          \item $A_i$: Assessing a nest $i$ \mcolor{black}{(Initially 0)}
+          \item $R_i$: Recruiting to a nest $i$ \mcolor{black}{(Initially 0)}
+          \item $P_i$: The passive population at nest i \mcolor{black}{($P_0 = N(1-p), P_i = 0$)}
       \end{itemize}
 
   \subsection{Overview of Pratt 2002 Equations (Colors showing flow of ant population)}
       \Large
       \begin{equation}
       \begin{aligned}
-          & \frac{dS}{dt} = - \sum_{j=1}^M \mcolor{orange}{u_jS} - \sum_{j=1}^M \mcolor{purple}{\lambda_jI(R_j, S)} \\
-          & \frac{dA_i}{dt} = \mcolor{orange}{u_iS} + \mcolor{purple}{\lambda_jI(R_j, S)} + \sum_{j \neq i}^M \mcolor{blue}{(\rho_{ji}A_j - \rho_{ij}A_i)} - \mcolor{green}{k_iA_i} \\
-          & \frac{dR_i}{dt} = \mcolor{green}{k_iA_i} + \sum_{j \neq i}^M \mcolor{blue}{(\rho_{ji}R_j - \rho_{ij}R_i)} \\
-          & \frac{dP_i}{dt} = \annotate{red}{Causes overflow if unchecked}{\phi_iJ(R_i, P_0)} - \annotate{white}{Fix: Subtract moved ants}{\phi_{dest}J(R_{dest},P_0)}
+          & \frac{ds}{dt} = - \sum_{j=1}^m \mcolor{black}{u_js} - \sum_{j=1}^m \mcolor{black}{\lambda_ji(r_j, s)} \\
+          & \frac{da_i}{dt} = \mcolor{black}{u_is} + \mcolor{black}{\lambda_ji(r_j, s)} + \sum_{j \neq i}^m \mcolor{black}{(\rho_{ji}a_j - \rho_{ij}a_i)} - \mcolor{black}{k_ia_i} \\
+          & \frac{dr_i}{dt} = \mcolor{black}{k_ia_i} + \sum_{j \neq i}^m \mcolor{black}{(\rho_{ji}r_j - \rho_{ij}r_i)} \\
+          & \frac{dp_i}{dt} = \annotate{black}{causes overflow if unchecked}{\phi_ij(r_i, p_0)} - \annotate{black}{fix: subtract moved ants}{\phi_{dest}j(r_{dest},p_0)}
       \end{aligned}
       \end{equation}
   \subsection{Search population}
       \Large
       \begin{multline}
-      \frac{dS}{dt} = - \sum_{j=1}^M \annotate{orange}{Rate of finding nest $j$}{u_j}*S \\  
-      - \sum_{j=1}^M \annotate{purple}{Ants led by tandem run}{\lambda_jI(R_j, S)} 
+      \frac{dS}{dt} = - \sum_{j=1}^M \annotate{black}{Rate of finding nest $j$}{u_j}*S \\  
+      - \sum_{j=1}^M \annotate{black}{Ants led by tandem run}{\lambda_jI(R_j, S)} 
       \end{multline}
   \subsection{Assessment population}
       \Large
       \begin{multline}
-      \frac{dA_i}{dt} = \annotate{orange}{Ants that find nest $i$ and begin assessing it}{u_iS} \\ 
-      + \annotate{purple}{Ants led by tandem run}{\lambda_jI(R_j, S)} \\
-      + \sum_{j \neq i}^M \annotate{blue}{Ants encountering alternative sites}{(\rho_{ji}A_j - \rho_{ij}A_i)} \\ 
-      - \annotate{green}{Ants that become recruiters}{k_iA_i} \\
+      \frac{dA_i}{dt} = \annotate{black}{Ants that find nest $i$ and begin assessing it}{u_iS} \\ 
+      + \annotate{black}{Ants led by tandem run}{\lambda_jI(R_j, S)} \\
+      + \sum_{j \neq i}^M \annotate{black}{Ants encountering alternative sites}{(\rho_{ji}A_j - \rho_{ij}A_i)} \\ 
+      - \annotate{black}{Ants that become recruiters}{k_iA_i} \\
       \end{multline}
   \subsection{Recruitment population}
       \Large
       \begin{multline}
-          \frac{dR_i}{dt} = \annotate{green}{Ants that become recruiters}{k_iA_i} \\
-          + \sum_{j \neq i}^M \annotate{blue}{Ants encountering alternative sites}{(\rho_{ji}R_j - \rho_{ij}R_i)}
+          \frac{dR_i}{dt} = \annotate{black}{Ants that become recruiters}{k_iA_i} \\
+          + \sum_{j \neq i}^M \annotate{black}{Ants encountering alternative sites}{(\rho_{ji}R_j - \rho_{ij}R_i)}
       \end{multline}
   \subsection{Passive population}
       \Large
       \begin{equation}
-          \frac{dP_i}{dt} = \underbrace{\annotate{red}{Per capita transport rate}{\phi_i} * \annotate{red}{Quorum requirement}{J(R_i, P_0)}}_\text{Carried passive ants}
+          \frac{dP_i}{dt} = \underbrace{\annotate{black}{Per capita transport rate}{\phi_i} * \annotate{black}{Quorum requirement}{J(R_i, P_0)}}_\text{Carried passive ants}
       \end{equation}
   \subsection{Auxilary Functions}
       \Large
@@ -164,8 +161,8 @@ This can be seen in the population equations from [TODO cite Pratt 2002], where 
       \begin{equation}
           I(R_i, S) = 
           \begin{cases}
-              & R_i,  \text{ if } \annotate{red}{Recruiters below threshold}{R_i < T} \\
-              &       \text{     and } \annotate{red}{While there are recruitable ants}{S > 0}\\
+              & R_i,  \text{ if } \annotate{black}{Recruiters below threshold}{R_i < T} \\
+              &       \text{     and } \annotate{black}{While there are recruitable ants}{S > 0}\\
               & 0, \text{ otherwise}
           \end{cases}
       \end{equation}
@@ -176,8 +173,8 @@ This can be seen in the population equations from [TODO cite Pratt 2002], where 
       \begin{equation}
           J(R_i, P_0) = 
           \begin{cases}
-              & 0,  \text{ if } \annotate{red}{Recruiters below threshold}{R_i < T} \\  
-              &     \text{     or } \annotate{red}{Edge case: migration has finished}{P_0 = 0}\\
+              & 0,  \text{ if } \annotate{black}{Recruiters below threshold}{R_i < T} \\  
+              &     \text{     or } \annotate{black}{Edge case: migration has finished}{P_0 = 0}\\
               & R_i, \text{ otherwise}
           \end{cases}
       \end{equation}
@@ -205,7 +202,7 @@ This can be seen in the population equations from [TODO cite Pratt 2002], where 
           \item Minute differences (potential for ants to get lost)
       \end{itemize}
 
-  \subsection{Proposed Model}
+  \section{Proposed Ordinary Differential Equation Model}
 
   The proposed model begins with an improved set of ordinary differential equations, based on [TODO: Cite Pratt 2002].
   It contains equations for five separate populations: 
@@ -247,19 +244,52 @@ This can be seen in the population equations from [TODO cite Pratt 2002], where 
 
 The updated model builds on this list, but renames old parameters to make them more intuitive: \\
 
-\begin{tabular}{ l | c | c | r }
+\begin{tabular}{ l | c | r }
     \hline
-  Name & 2002 & 2005 & Description $i$\\ \hline
-  $\phi_i$      & $\mu_i$     &  & Finding nest $i$\\
-  $\lambda_i$   & $\lambda_i$ &  & Led by leaders to $i$\\
-  $\alpha_i$    & $k_i$       &  & Assessors who accept nest $i$\\ \hline
-  $\tau_{Pi}$   & $\phi_i$    &  & Passive ants are transported\\
-  $\tau_{Si}$   & \em{New}    &  & Searching ants are transported\\ \hline
-  $\sigma_{Ai}$ & \em{New}    &  & Assessing ants enter search\\
-  $\sigma_{Li}$ & \em{New}    &  & Leading ants enter search\\
-  $\sigma_{Ci}$ & \em{New}    &  & Carrying ants enter search\\
+  Name          & 2002        & Description (units = rate)\\ \hline
+  $\phi_i$      & $\mu_i$     & Finding nest $i$\\
+  $\lambda_i$   & $\lambda_i$ & Led by leaders to $i$\\
+  T             & T           & Threshold (positive integer)\\
+  $\alpha_i$    & $k_i$       & Assessors who accept nest $i$\\ \hline
+  $\tau_{Pi}$   & $\phi_i$    & Passive ants are transported to $i$\\
+  $\tau_{Si}$   & \em{New}    & Searching ants are transported to $i$\\ \hline
+  $\sigma_{Ai}$ & \em{New}    & Assessing ants enter search from $i$\\
+  $\sigma_{Li}$ & \em{New}    & Leading ants enter search from $i$\\
+  $\sigma_{Ci}$ & \em{New}    & Carrying ants enter search from $i$\\
   \hline
 \end{tabular} \\
+
+%% For clarity, the following table relates parameters in this model to the parameters in [TODO: Cite Spratt 2005 and grav 2012]\\
+%% 
+%% \begin{tabular}{ l | r }
+%%     \hline
+%%     Name & 2005 \\ \hline
+%%   $\phi_i$      &  \\
+%%   $\lambda_i$   &  \\
+%%   T             &  \\
+%%   $\alpha_i$    &  \\ \hline
+%%   $\tau_{Pi}$   &  \\
+%%   $\tau_{Si}$   &  \\ \hline
+%%   $\sigma_{Ai}$ &  \\
+%%   $\sigma_{Li}$ &  \\
+%%   $\sigma_{Ci}$ &  \\
+%%   \hline
+%% \end{tabular} \\
+
+Based on these parameters, the new equations are:
+\begin{equation}
+\begin{aligned}
+  & \frac{dS}{dt}   = \sum {-\phi_iS - \lambda_iL_iS + \tau_{Pi}C_iS + \sigma_{Ai}A_i + \sigma_{Li}L_i + \sigma_{Ci}C_i} \\\\
+  & \frac{dA_i}{dt} = \phi_iS + \lambda_iL_iS + \tau_{Pi}C_iS - \sigma_{Ai}Ai - \alpha_iA_i \\\\
+  & \frac{dL_i}{dt} = (1-Q(i))\alpha_iA_i - Q(i)L_i + (1 - Q(i))C_i - \sigma_{Li}L_i \\\\
+  & \frac{dC_i}{dt} = Q(i)\alpha_iA_i - (1 - Q(i))C_i + Q(i)L_i - \sigma{Ci}C_i \\\\
+  & \frac{dP_i}{dt} = \sum_{j \neq i} [\tau_{Pi}P_jC_i - \tau_{Pj}P_iC_j]\\\\
+  & Q(i) = 0, \text{if    } \sum (A_i + L_i + C_i + P_i) \leq T \\
+  & Q(i) = 1, \text{otherwise} \\
+\end{aligned}
+\end{equation}
+
+These equations do not account for reverse tandem runs, but could be modified easily to do so (especially once tandem runs are better understood).
 
   \subsection{Bibliography}
       \bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks,sources/misc}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  8 NOV 2018 12:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  9 NOV 2018 08:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -474,82 +474,89 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 102.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 115.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+
+Overfull \hbox (5.63728pt too wide) detected at line 130
+[][]
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-Overfull \hbox (26.74448pt too wide) detected at line 135
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+[]\OT1/ptm/m/n/12 Finding/Recruitment/Switching/Conversion
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--242
+
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 243--244
+[]\OT1/ptm/m/n/12 The up-dated model builds on this list, but
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 243--244
+\OT1/ptm/m/n/12 re-names old pa-ram-e-ters to make them more
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+Overfull \hbox (23.56404pt too wide) in paragraph at lines 245--259
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--259
+
+ []
+
+
+Overfull \hbox (61.06746pt too wide) detected at line 288
 [][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 188--189
-[]\OT1/ptm/m/n/12 Finding/Recruitment/Switching/Conversion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--247
-
- []
-
-
-Underfull \hbox (badness 1275) in paragraph at lines 248--249
-[]\OT1/ptm/m/n/12 The up-dated model builds on this list, but
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 248--249
-\OT1/ptm/m/n/12 re-names old pa-ram-e-ters to make them more
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
-
- []
-
-
-Overfull \hbox (40.21976pt too wide) in paragraph at lines 250--263
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--263
-
- []
-
+ [3]
 No file report.bbl.
 No file report.bbl.
-[3] [4
+[4
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 12653 strings out of 492642
- 250040 string characters out of 6135566
- 305648 words of memory out of 5000000
- 16292 multiletter control sequences out of 15000+600000
- 25237 words of font info for 51 fonts, out of 8000000 for 9000
+ 12651 strings out of 492642
+ 250018 string characters out of 6135566
+ 306648 words of memory out of 5000000
+ 16291 multiletter control sequences out of 15000+600000
+ 23553 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,67p,415b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/shar
@@ -564,7 +571,7 @@ s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (4 pages, 148987 bytes).
+Output written on report.pdf (4 pages, 148098 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
