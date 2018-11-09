@@ -17,6 +17,10 @@ def main(args):
     elif colony == 71:
         experiment = pandas.read_csv('C71Active1C.csv')
         control    = pandas.read_csv('C71Control1C.csv')
+
+    #experiment = pandas.read_csv('C71Active1C.csv')
+    #control    = pandas.read_csv('C71TA3T.csv')
+
     #plot_original(experiment, control, colony)
     #experiment = experiment[(experiment['speed (px/s)'] > 3)]
     #control    = control[(control['speed (px/s)'] > 3)]
