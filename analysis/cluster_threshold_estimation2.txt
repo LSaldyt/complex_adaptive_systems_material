@@ -1,0 +1,30 @@
+Threshold = 250 pixels gave 46 clusters of sizes:
+[[1, 1, 1, 1, 1, 14, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1]]
+Threshold = 260 pixels gave 39 clusters of sizes:
+[[2, 1, 1, 1, 19, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 270 pixels gave 31 clusters of sizes:
+[[2, 1, 28, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 280 pixels gave 27 clusters of sizes:
+[[2, 1, 31, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 290 pixels gave 21 clusters of sizes:
+[[2, 1, 37, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 300 pixels gave 20 clusters of sizes:
+[[2, 1, 38, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 310 pixels gave 19 clusters of sizes:
+[[2, 1, 39, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 320 pixels gave 18 clusters of sizes:
+[[2, 1, 40, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 330 pixels gave 13 clusters of sizes:
+[[2, 1, 46, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 340 pixels gave 11 clusters of sizes:
+[[2, 1, 48, 1, 1, 1, 1, 1, 1, 1, 3]]
+Threshold = 350 pixels gave 6 clusters of sizes:
+[[53, 1, 1, 1, 1, 4]]
+Threshold = 360 pixels gave 5 clusters of sizes:
+[[54, 1, 1, 1, 4]]
+Threshold = 370 pixels gave 4 clusters of sizes:
+[[55, 1, 1, 4]]
+Threshold = 380 pixels gave 2 clusters of sizes:
+[[56, 5]]
+Threshold = 390 pixels gave 2 clusters of sizes:
+[[56, 5]]

@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+import os
+from functools import partial
+
+import pickle
+import pandas
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+from pprint import pprint
+
+from collections import defaultdict
+
+sns.set(style="whitegrid")
+
+data = pandas.read_csv('processed.csv')
+
+# Clustering coefficient: [sum weights of closed triangles] / [sum weights of open triangles]
+
+ids = list(sorted(map(int, set(data['id']))))
+
+def create_cluster(i, seen):
+    cluster = set()
+    if i not in seen:
+        seen.add(i)
+        cluster.add(i)
+        ant_data = data[(data.id == i)]
+        for j in ids:
+            dist = ant_data['d{}'.format(j)].mean()
+            if dist < threshold:
+                cluster.add(j)
+                cluster.update(create_cluster(j, seen))
+                seen.add(j)
+    return cluster
+
+
+for threshold in range(250, 400):
+    if threshold % 10 == 0:
+        clusters = []
+        seen = set()
+
+        for i in ids:
+            cluster = create_cluster(i, seen)
+            if len(cluster) > 0:
+                clusters.append(cluster)
+        print('Threshold = {} pixels gave {} clusters of sizes:'.format(threshold, len(clusters)))
+        print('[{}]'.format(list(map(len, clusters))))
