@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+
+import networkx as nx
+
+import os
+from functools import partial
+
+import pickle
+import pandas
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+from pprint import pprint
+
+from collections import defaultdict
+
+sns.set(style="whitegrid")
+
+if not os.path.isfile('ant_graph.pkl'):
+    colony_data = pandas.read_csv('processed.csv')
+
+    ids = list(sorted(map(int, set(colony_data['id']))))
+
+    maxdist = colony_data[['d{}'.format(i) for i in ids]].max().max()
+
+    graphs = []
+    for frame in sorted(set(colony_data['frames'])):
+        print(frame)
+        frame_data = colony_data[(colony_data.frames == frame)]
+        G = nx.Graph()
+        for i in ids:
+            ant_data = frame_data[(frame_data.id == i)]
+            x = ant_data['locX'].mean()
+            y = ant_data['locY'].mean()
+            G.add_node(i, pos=(x, y))
+            for j in ids:
+                dist = ant_data['d{}'.format(j)]
+                G.add_edge(i, j, weight=dist/maxdist)
+        graphs.append(G)
+
+    with open('ant_graph.pkl', 'wb') as outfile:
+        pickle.dump(graphs, outfile)
+
+with open('ant_graph.pkl', 'rb') as infile:
+    graphs = pickle.load(infile)
+
+for G in graphs:
+    emid   = [(u, v) for (u, v, d) in G.edges(data=True) if d['weight'] > 0.5]
+    esmall = [(u, v) for (u, v, d) in G.edges(data=True) if d['weight'] <= 0.5 and d['weight'] > 0.1]
+    etiny  = [(u, v) for (u, v, d) in G.edges(data=True) if d['weight'] <= 0.1]
+
+    pos=nx.get_node_attributes(G, 'pos')
+
+    nx.draw_networkx_nodes(G, pos, node_size=500)
+
+    nx.draw_networkx_edges(G, pos, edgelist=etiny, alpha=0.7,
+                           width=2)
+    nx.draw_networkx_edges(G, pos, edgelist=esmall,
+                           width=2, alpha=0.1)
+    nx.draw_networkx_edges(G, pos, edgelist=emid, alpha=0.05,
+                           width=2)
+
+    nx.draw_networkx_labels(G, pos, font_size=12, font_family='mono')
+
+    plt.axis('off')
+    plt.show()
