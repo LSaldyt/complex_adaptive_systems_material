@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  9 NOV 2018 08:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  11 NOV 2018 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,17 +476,17 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 115.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 117.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 
-Overfull \hbox (5.63728pt too wide) detected at line 130
+Overfull \hbox (5.63728pt too wide) detected at line 132
 [][]
  []
 
@@ -496,49 +496,49 @@ Overfull \hbox (5.63728pt too wide) detected at line 130
 
 ]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 []\OT1/ptm/m/n/12 Finding/Recruitment/Switching/Conversion
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--242
+Underfull \hbox (badness 10000) in paragraph at lines 235--244
 
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 243--244
+Underfull \hbox (badness 1275) in paragraph at lines 245--246
 []\OT1/ptm/m/n/12 The up-dated model builds on this list, but
  []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 243--244
+Underfull \hbox (badness 2050) in paragraph at lines 245--246
 \OT1/ptm/m/n/12 re-names old pa-ram-e-ters to make them more
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
 
-Overfull \hbox (23.56404pt too wide) in paragraph at lines 245--259
+Overfull \hbox (23.56404pt too wide) in paragraph at lines 247--261
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--259
+Underfull \hbox (badness 10000) in paragraph at lines 247--261
 
  []
 
 
-Overfull \hbox (61.06746pt too wide) detected at line 288
+Overfull \hbox (64.64241pt too wide) detected at line 290
 [][]
  []
 
@@ -571,7 +571,7 @@ s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (4 pages, 148098 bytes).
+Output written on report.pdf (4 pages, 148108 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
