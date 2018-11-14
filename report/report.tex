@@ -275,14 +275,22 @@ The updated model builds on this list, but renames old parameters to make them m
 %%   $\sigma_{Ci}$ &  \\
 %%   \hline
 %% \end{tabular} \\
+TODO: Describe each parameter, its justification, et cetera.
 
-Based on these parameters, the new equations are:
+\begin{multline}
+    \frac{dS}{dt} = \sum \big[ -\phi_iS - \lambda_iL_iS - \tau_{Si}C_iS \\ + \sigma_{Ai}A_i + \sigma_{Li}L_i + \sigma_{Ci}C_i \big]
+\end{multline}
+\begin{multline}
+    \frac{dA_i}{dt} = \phi_iS + \lambda_iL_iS + \tau_{Si}C_iS - \sigma_{Ai}Ai - \alpha_iA_i
+\end{multline}
+\begin{multline}
+    \frac{dL_i}{dt} = (1-Q(i))\alpha_iA_i - Q(i)L_i + (1 - Q(i))C_i - \sigma_{Li}L_i
+\end{multline}
+\begin{multline}
+    \frac{dC_i}{dt} = Q(i)\alpha_iA_i - (1 - Q(i))C_i + Q(i)L_i - \sigma{Ci}C_i
+\end{multline}
 \begin{equation}
 \begin{aligned}
-    & \frac{dS}{dt}   = \sum [{-\phi_iS - \lambda_iL_iS + \tau_{Si}C_iS + \sigma_{Ai}A_i + \sigma_{Li}L_i + \sigma_{Ci}C_i}] \\\\
-  & \frac{dA_i}{dt} = \phi_iS + \lambda_iL_iS + \tau_{Si}C_iS - \sigma_{Ai}Ai - \alpha_iA_i \\\\
-  & \frac{dL_i}{dt} = (1-Q(i))\alpha_iA_i - Q(i)L_i + (1 - Q(i))C_i - \sigma_{Li}L_i \\\\
-  & \frac{dC_i}{dt} = Q(i)\alpha_iA_i - (1 - Q(i))C_i + Q(i)L_i - \sigma{Ci}C_i \\\\
   & \frac{dP_i}{dt} = \sum_{j \neq i} [\tau_{Pi}P_jC_i - \tau_{Pj}P_iC_j]\\\\
   & Q(i) = 0, \text{if    } \sum [A_i + L_i + C_i + P_i] \leq T \\
   & Q(i) = 1, \text{otherwise} \\

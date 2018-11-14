@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  11 NOV 2018 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  14 NOV 2018 10:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,14 +538,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--261
  []
 
 
-Overfull \hbox (64.64241pt too wide) detected at line 290
-[][]
+Overfull \hbox (33.66385pt too wide) detected at line 288
+ []$[]  [] \OT1/cmr/m/n/12 = (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Q\OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 i\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 []A[] \OMS/cmsy/
+m/n/12 ^^@ \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i\OT1/cmr/m/n/12
+ )\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 + (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/
+12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 C[] \
+OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ^^[[]L[]$ []  
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (14.67352pt too wide) detected at line 291
+ []$[]  [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 i\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 []A[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/1
+2 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i
+\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 C[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 Q\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 i\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 L[] \OMS/cmsy/
+m/n/12 ^^@ \OML/cmm/m/it/12 ^^[[]C[]$ []  
+ []
 
- [3]
+[3]
 No file report.bbl.
 No file report.bbl.
 [4
@@ -571,7 +583,7 @@ s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (4 pages, 148108 bytes).
+Output written on report.pdf (4 pages, 148631 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
