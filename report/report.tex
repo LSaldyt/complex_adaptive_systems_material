@@ -275,23 +275,78 @@ The updated model builds on this list, but renames old parameters to make them m
 %%   $\sigma_{Ci}$ &  \\
 %%   \hline
 %% \end{tabular} \\
-TODO: Describe each parameter, its justification, et cetera.
+\subsubsection{Parameter Descriptions} 
 
+$\phi_i$, previously $\mu_i$, describes the rate at which search ants find nest $i$. 
+Generally, this will be used to describe nests that are at different distances from the original destroyed nest. \\
+$\lambda_i$ describes the rate at which ants are led by leaders to nest $i$. 
+Differences in $\lambda_i$ would describe nests which were led to faster. \\
+$T$ is simply the quorum threshold, and is a free variable meant to be experimented with.
+Pratt 2002 found that a value between $8$ and $30$ was best. \\
+$\alpha_i$, previously $k_i$, describes the rate at which assessors accept a nest and begin recruiting.
+It is this parameter which allows a rapid positive feedback loop to occur, and this is largely responsible for optimal nest choice. \\
+$\tau_{Pi}$, previously $\phi_i$ is the rate at which passive ants are transported to nest $i$.
+However, this model introduces a few new parameters, based on the agent based models in [TODO: Gravinvosky?] and Pratt 2005. 
+For instance, $\tau_{Si}$ describes the transport of searching ants. 
+TODO: Should there also be transport of other active ants? \\
+$\sigma$ describes the rate at which ants in an active state ($A_i$, $L_i$, or $C_i$) enter searching again.
+For instance, $\sigma_{Ai}$ would denote the rate at which assessing ants enter search from nest $i$.
+
+\subsubsection{Proposed Equations and Descriptions}
+
+The following equation describes the searching population, which starts as $Np$.
 \begin{multline}
     \frac{dS}{dt} = \sum \big[ -\phi_iS - \lambda_iL_iS - \tau_{Si}C_iS \\ + \sigma_{Ai}A_i + \sigma_{Li}L_i + \sigma_{Ci}C_i \big]
 \end{multline}
+
+The first term, $\phi_iS$, describes ants that encounter new sites and enter the assessment population.
+$\lambda_iL_iS$ describes ants being led to new sites and becoming assessors. $L_i$ is included here because the presence of more leading ants will increase the rate at which ants are led to new sites (i.e. ten leading ants lead ants faster than a single ant). Therefore $\lambda_i$ is proportional to $L_i$.
+$\tau_{Si}C_iS$ describes ants that are transported to new sites. As with the previous term, $\tau_{Si}$ is a rate per individual in $C_i$.
+Lasltly, the $\sigma$ terms describe ants that exit other active states and begin searching, each with an independent rate.
+
+The following equation describes the assessment populations, which start at $0$:
 \begin{multline}
     \frac{dA_i}{dt} = \phi_iS + \lambda_iL_iS + \tau_{Si}C_iS - \sigma_{Ai}Ai - \alpha_iA_i
 \end{multline}
+
+The first three terms match the first three terms of the search-population equation.
+$\phi_iS$ describes incoming ants that have found the nest themselves, $\lambda_iL_iS$ describes ants that were carried to the nest $i$, and $\tau_{Si}C_iS$ describes ants that were carried to the nest $i$.
+
+$\sigma_{Ai}A_i$ describes ants that begin searching after assessing a nest, and lastly $alpha_iA_i$ describes ants that accept a nest and begin recruiting.
+
+The following equation describes the leading populations, which starts at $0$.
+
 \begin{multline}
     \frac{dL_i}{dt} = (1-Q(i))\alpha_iA_i - Q(i)L_i + (1 - Q(i))C_i - \sigma_{Li}L_i
 \end{multline}
+
+First, the function $Q()$, defined below, returns $1$ if the nest $i$ is above the quorum threshold and $0$ otherwise. Therefore $1 - Q(i)$ is $0$ when the nest is above the quorum threshold and $1$ otherwise.
+So, when the nest $i$ is above the quorum threshold, only the terms $-Q(i)L_i$ and $\sigma_{Li}L_i$ are active. $Q(i)L_i$ represents a movement of ants from leading to carrying. $\sigma_{Li}L_i$ represents leading ants deciding to enter the search state.
+When the nest is below the quorum threshold, the first and third term are both active. $1-Q(i)\alpha_iA_i$ describes assessing ants entering the leading populations after accepting a nest, and $1-Q(i)Ci$ describes (potentially) carrying ants reverting to the leading state.
+
+The following equation describes the carrying populations, which starts at $0$:
+
 \begin{multline}
     \frac{dC_i}{dt} = Q(i)\alpha_iA_i - (1 - Q(i))C_i + Q(i)L_i - \sigma{Ci}C_i
 \end{multline}
+
+Similarly to the leading population equations, $Q()$ acts as a switch. When the nest $i$ is above the quorum threshold, assessing ants will enter the carrying population directly through the $Q(i)alpha_iA_i$ term and leading ants are converted through the $Q(i)L_i$ term.
+The term $(1-Q(i))C_i$ describes ants that (potentially) revert to the leading state. 
+Lastly, the term $\sigma{Ci}C_i$ describes ants that enter the searching state from carrying.
+
+The following equation describes the passive population dynamics. Initially, $P_0 = (1-p)N$ and otherwise $P_i = 0$:
 \begin{equation}
 \begin{aligned}
-  & \frac{dP_i}{dt} = \sum_{j \neq i} [\tau_{Pi}P_jC_i - \tau_{Pj}P_iC_j]\\\\
+  \frac{dP_i}{dt} = \sum_{j \neq i} [\tau_{Pi}P_jC_i - \tau_{Pj}P_iC_j]
+\end{aligned}
+\end{equation}
+
+Essentially, the first term $\tau{Pi}P_jC_i$ desribes ants being moved to site $i$ from site $j$, while the second term describes ants being moved from site $i$ to site $j$.
+
+The $Q()$ switching function is defined as follows, and should be self explanatory. Potentially, (TODO) $P_i$ population should not be counted (but in simulation, this is not a contributing factor):
+
+\begin{equation}
+\begin{aligned}
   & Q(i) = 0, \text{if    } \sum [A_i + L_i + C_i + P_i] \leq T \\
   & Q(i) = 1, \text{otherwise} \\
 \end{aligned}

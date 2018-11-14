@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  14 NOV 2018 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  14 NOV 2018 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,7 +538,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--261
  []
 
 
-Overfull \hbox (33.66385pt too wide) detected at line 288
+Underfull \hbox (badness 3148) in paragraph at lines 280--294
+ \OT1/ptm/b/n/10 Pa-ram-e-ter De-scrip-tions $\OML/cmm/m/it/12 ^^^[]$\OT1/ptm/m
+/n/12 , pre-vi-ously $\OML/cmm/m/it/12 ^^V[]$\OT1/ptm/m/n/12 , de-
+ []
+
+[3]
+Overfull \hbox (33.66385pt too wide) detected at line 321
  []$[]  [] \OT1/cmr/m/n/12 = (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Q\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 i\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 []A[] \OMS/cmsy/
 m/n/12 ^^@ \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i\OT1/cmr/m/n/12
@@ -548,7 +554,7 @@ OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ^^[[]L[]$ []
  []
 
 
-Overfull \hbox (14.67352pt too wide) detected at line 291
+Overfull \hbox (14.67352pt too wide) detected at line 331
  []$[]  [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 2 i\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 []A[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/1
 2 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i
@@ -557,10 +563,10 @@ Overfull \hbox (14.67352pt too wide) detected at line 291
 m/n/12 ^^@ \OML/cmm/m/it/12 ^^[[]C[]$ []  
  []
 
-[3]
+[4]
 No file report.bbl.
 No file report.bbl.
-[4
+[5
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
@@ -583,10 +589,10 @@ s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (4 pages, 148631 bytes).
+Output written on report.pdf (5 pages, 154205 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
