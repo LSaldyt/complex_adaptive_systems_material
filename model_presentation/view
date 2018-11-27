@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+pdflatex presentation.tex
+#bibtex presentation
+#pdflatex presentation.tex
+zathura presentation.pdf
