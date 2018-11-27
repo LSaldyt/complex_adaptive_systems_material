@@ -182,7 +182,7 @@
 
 \begin{frame}{Assessing Equation}
 \begin{multline}
-\frac{dA_i}{dt} = S * [\annotate{orange}{Found nest i}{\phi_i} + \annotate{purple}{Led to nest i}{\lambda_iL_i} + \annotate{red}{Carried to nest i}{\tau C_i}   
+\frac{dA_i}{dt} = S * [\annotate{orange}{Found nest i}{\phi_i} + \annotate{purple}{Led to nest i}{\lambda_iL_i} \\ + \annotate{red}{Carried to nest i}{\tau \big[ C_i * \sum_{j \neq i, j}{(S + L_j + C_j + A_j)} - \sum_{j \neq i, j}{C_j * A_i} \big] }   
 \annotate{blue}{Began searching}{- \sigma_{Ai}A_i}] \\
     \annotate{green}{Accepted nest}{- \alpha_iA_i}
 \end{multline}
@@ -242,6 +242,47 @@
   & Q(i) = 1, \text{otherwise} \\
 \end{aligned}
 \end{equation}
+\end{frame}
+
+\begin{frame}{Results: convergance times}
+    \includegraphics[scale=0.6]{convergance_times}
+\end{frame}
+
+\begin{frame}{Results: distance convergance times}
+    \includegraphics[scale=0.7]{distance_convergance_times_low_T}
+\end{frame}
+
+\begin{frame}{Results: distance convergance times}
+    \includegraphics[scale=0.7]{distance_convergance_times_t_over_10}
+\end{frame}
+
+\begin{frame}{Proposed Agent-based model}
+    \begin{itemize}
+        \item Each agent has two properties: commitment strength and source nest.
+        \item Initially, each of these is zero.
+        \item Commitment strength is a continuous value between $0.0$ and $1.0$.
+        \item Source nest is an integer.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Proposed Agent-based model}
+    \begin{itemize}
+        \item At each timestep, an agent either recruits other agents, or searches for new items.
+        \item The propability of searching is $1 - $ commitment\_strength
+        \item If the searching action is taken, the probability of finding each nest is $\phi_i$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Proposed Agent-based model}
+    \begin{itemize}
+        \item The commitment strength is changed to $\alpha_i$ after accepting a nest.
+        \item If searching is not chosen, then recruiting is chosen with probability equal to commitment strength
+        \item Agents indiscriminately recruit agents that are assessing other items.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Results: distance convergance times}
+    \includegraphics[scale=0.7]{agent_based_population_model}
 \end{frame}
 
   \begin{frame}{Bibliography}
