@@ -1,4 +1,5 @@
 \documentclass[letterpaper]{article}
+\usepackage{hyperref}
 \usepackage{natbib,alifeconf}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
@@ -19,6 +20,14 @@
 \mcolor{#1}{\overbrace{#3}^\text{#2}}
 }
 
+\newcommand{\plot}[3]{
+    \begin{figure}[h]
+        \includegraphics[keepaspectratio=true,scale=#3]{#1}
+        \caption{#2}
+        \label{fig:#1}
+    \end{figure}
+}
+
 \newcommand{\sitem}[1]
 {
     \begin{itemize}
@@ -35,7 +44,8 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 
-\title{Report for Complex Adaptive Systems}
+\title{Models of Decision Making in the Rock Ant Temnothorax Albipennis}
+\date{\today}
 \author{Lucas Saldyt}
 
 \begin{document}
@@ -261,8 +271,7 @@ The updated model builds on this list, but renames old parameters to make them m
   $\lambda_i$   & $\lambda_i$ & Led by leaders to $i$\\
   T             & T           & Threshold (positive integer)\\
   $\alpha_i$    & $k_i$       & Assessors who accept nest $i$\\ \hline
-  $\tau_{Pi}$   & $\phi_i$    & Passive ants are transported to $i$\\
-  $\tau_{Si}$   & \em{New}    & Searching ants are transported to $i$\\ \hline
+  $\tau$        & $\phi_i$    & Transport rate \\
   $\sigma_{Ai}$ & \em{New}    & Assessing ants enter search from $i$\\
   $\sigma_{Li}$ & \em{New}    & Leading ants enter search from $i$\\
   $\sigma_{Ci}$ & \em{New}    & Carrying ants enter search from $i$\\
@@ -285,7 +294,7 @@ The updated model builds on this list, but renames old parameters to make them m
 %%   $\sigma_{Ci}$ &  \\
 %%   \hline
 %% \end{tabular} \\
-\subsubsection{Parameter Descriptions} 
+\subsection{Parameter Descriptions} 
 
 $\phi_i$, previously $\mu_i$, describes the rate at which search ants find nest $i$. 
 Generally, this will be used to describe nests that are at different distances from the original destroyed nest. \\
@@ -302,56 +311,74 @@ TODO: Should there also be transport of other active ants? \\
 $\sigma$ describes the rate at which ants in an active state ($A_i$, $L_i$, or $C_i$) enter searching again.
 For instance, $\sigma_{Ai}$ would denote the rate at which assessing ants enter search from nest $i$.
 
-\subsubsection{Proposed Equations and Descriptions}
+\subsection{Proposed Equations and Descriptions}
+
+\subsubsection{Searching population equation}
+\hfill\\
 
 The following equation describes the searching population, which starts as $Np$.
 \begin{multline}
-    \frac{dS}{dt} = \sum \big[ -\phi_iS - \lambda_iL_iS - \tau_{Si}C_iS \\ + \sigma_{Ai}A_i + \sigma_{Li}L_i + \sigma_{Ci}C_i \big]
+      \frac{dS}{dt} = S * \sum_i \big[- \phi_i - \lambda_iL_i - \tau C_i + \sigma_{Ai}A_i + \sigma_{Li}L_i + \sigma_{Ci}C_i \big]
 \end{multline}
 
-The first term, $\phi_iS$, describes ants that encounter new sites and enter the assessment population.
-$\lambda_iL_iS$ describes ants being led to new sites and becoming assessors. $L_i$ is included here because the presence of more leading ants will increase the rate at which ants are led to new sites (i.e. ten leading ants lead ants faster than a single ant). Therefore $\lambda_i$ is proportional to $L_i$.
-$\tau_{Si}C_iS$ describes ants that are transported to new sites. As with the previous term, $\tau_{Si}$ is a rate per individual in $C_i$.
+The first term, $\phi_i$, describes ants that encounter new sites and enter the assessment population.
+$\lambda_iL_i$ describes ants being led to new sites and becoming assessors. $L_i$ is included here because the presence of more leading ants will increase the rate at which ants are led to new sites (i.e. ten leading ants lead ants faster than a single ant). Therefore $\lambda_i$ is proportional to $L_i$.
+$\tau C_iS$ describes ants that are transported to new sites. As with the previous term, $\tau$ is a rate per individual in $C_i$.
 Lastly, the $\sigma$ terms describe ants that exit other active states and begin searching, each with an independent rate.
+
+\subsubsection{Assessing population equation}
+\hfill\\
 
 The following equation describes the assessment populations, which start at $0$:
 \begin{multline}
-    \frac{dA_i}{dt} = \phi_iS + \lambda_iL_iS + \tau_{Si}C_iS - \sigma_{Ai}Ai - \alpha_iA_i
+     \frac{dA_i}{dt} = S * [\phi_i + \lambda_iL_i + \tau \big[ C_i * \sum_{j \neq i}{(S + L_j + C_j + A_j)} \\ - C_j * \sum_{j \neq i}{A_i} \big] \\ - \sigma_{Ai}A_i] - \alpha_iA_i 
 \end{multline}
 
 The first three terms match the first three terms of the search-population equation.
-$\phi_iS$ describes incoming ants that have found the nest themselves, $\lambda_iL_iS$ describes ants that were carried to the nest $i$, and $\tau_{Si}C_iS$ describes ants that were carried to the nest $i$.
+$\phi_iS$ describes incoming ants that have found the nest themselves, $\lambda_iL_iS$ describes ants that were carried to the nest $i$, and $\tau C_iS$ describes ants that were carried to the nest $i$.
 
-$\sigma_{Ai}A_i$ describes ants that begin searching after assessing a nest, and lastly $alpha_iA_i$ describes ants that accept a nest and begin recruiting.
+$\sigma_{Ai}A_i$ describes ants that begin searching after assessing a nest, and lastly $\alpha_iA_i$ describes ants that accept a nest and begin recruiting.
+
+\subsubsection{Leading population equation}
+\hfill\\
 
 The following equation describes the leading populations, which starts at $0$.
 
 \begin{multline}
-    \frac{dL_i}{dt} = (1-Q(i))\alpha_iA_i - Q(i)L_i + (1 - Q(i))C_i - \sigma_{Li}L_i
+        \frac{dL_i}{dt} = \alpha_iA_i - Q(i)L_i - \sum_{j \neq i, j} \tau C_jL_i - - \sigma_{Ci}C_i \\
 \end{multline}
 
 First, the function $Q()$, defined below, returns $1$ if the nest $i$ is above the quorum threshold and $0$ otherwise. Therefore $1 - Q(i)$ is $0$ when the nest is above the quorum threshold and $1$ otherwise.
 So, when the nest $i$ is above the quorum threshold, only the terms $-Q(i)L_i$ and $\sigma_{Li}L_i$ are active. $Q(i)L_i$ represents a movement of ants from leading to carrying. $\sigma_{Li}L_i$ represents leading ants deciding to enter the search state.
 When the nest is below the quorum threshold, the first and third term are both active. $1-Q(i)\alpha_iA_i$ describes assessing ants entering the leading populations after accepting a nest, and $1-Q(i)Ci$ describes (potentially) carrying ants reverting to the leading state.
 
+\subsubsection{Carrying population equation}
+\hfill\\
+
 The following equation describes the carrying populations, which starts at $0$:
 
 \begin{multline}
-    \frac{dC_i}{dt} = Q(i)\alpha_iA_i - (1 - Q(i))C_i + Q(i)L_i - \sigma{Ci}C_i
+        \frac{dC_i}{dt} = Q(i)L_i - \sum_{j \neq i, j} \tau C_jC_i - - \sigma_{Ci}C_i \\
 \end{multline}
 
-Similarly to the leading population equations, $Q()$ acts as a switch. When the nest $i$ is above the quorum threshold, assessing ants will enter the carrying population directly through the $Q(i)alpha_iA_i$ term and leading ants are converted through the $Q(i)L_i$ term.
+Similarly to the leading population equations, $Q()$ acts as a switch. When the nest $i$ is above the quorum threshold, assessing ants will enter the carrying population directly through the $Q(i)\alpha_iA_i$ term and leading ants are converted through the $Q(i)L_i$ term.
 The term $(1-Q(i))C_i$ describes ants that (potentially) revert to the leading state. 
 Lastly, the term $\sigma{Ci}C_i$ describes ants that enter the searching state from carrying.
+
+\subsubsection{Passive population equation}
+\hfill\\
 
 The following equation describes the passive population dynamics. Initially, $P_0 = (1-p)N$ and otherwise $P_i = 0$:
 \begin{equation}
 \begin{aligned}
-  \frac{dP_i}{dt} = \sum_{j \neq i} [\tau_{Pi}P_jC_i - \tau_{Pj}P_iC_j]
+        \frac{dP_i}{dt} = \sum_{j \neq i} [\tau P_j C_i - \tau P_i C_j] \\
 \end{aligned}
 \end{equation}
 
-Essentially, the first term $\tau{Pi}P_jC_i$ desribes ants being moved to site $i$ from site $j$, while the second term describes ants being moved from site $i$ to site $j$.
+Essentially, the first term $\tau P_jC_i$ desribes ants being moved to site $i$ from site $j$, while the second term describes ants being moved from site $i$ to site $j$.
+
+\subsubsection{Quorum function}
+\hfill\\
 
 The $Q()$ switching function is defined as follows, and should be self explanatory. Potentially, (TODO) $P_i$ population should not be counted (but in simulation, this is not a contributing factor):
 
@@ -364,8 +391,79 @@ The $Q()$ switching function is defined as follows, and should be self explanato
 
 These equations do not account for reverse tandem runs, but could be modified easily to do so (especially once tandem runs are better understood).
 
-  \subsection{Bibliography}
-      \bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks,sources/misc}
+
+
+\section{Agent based model}
+
+The analysis of the above models led to the creation of a very simple agent-based feedback loop model.
+In essence, individual ants can make very accurate assessments of individual nests, and then recruit more quickly, based on the strength of this assessment.
+This process creates a feedback loop, where better nests are assessed by more ants at a higher rate.
+
+\subsection{Specific Implementation}
+Consider a model with $N$ agents choosing between $M$ items.
+Each agent has two properties:
+\begin{enumerate}
+    \item commitment strength, which is a floating point number that is initially zero
+    \item source item, which is an integer representing the item being recruited to
+\end{enumerate}
+Each agent has two actions:
+\begin{enumerate}
+    \item Recruitment to source item, triggered with probability $c$, which is the commitment strength of the agent.
+    \item Discovery of new items, triggered first with probability $1 - c$. Then a random (possibly weighted) item (or no item at all) is chosen to be encountered.
+\end{enumerate}
+When a new item is discovered by an agent, the agent's commitment strength is updated to the quality of the item.
+
+For instance, consider a simple scenario with two items that are both found at probability $0.013$ per timestep, and have qualities of $0.02$ and $0.015$ respectively.
+Since agents start with no commitment strength, agents will trigger the discovery action.
+Once the discovery action is triggered, a multinomial choice is made, with the following chances:
+\begin{itemize}
+    \item $0.013$ chance of finding item $1$.
+    \item $0.013$ chance of finding item $2$.
+    \item $0.974 = 1 - 2 * 0.013$ chance of doing nothing.
+\end{itemize}
+
+Suppose an agent encounters item $1$. This agent's commitment strength is now updated to $0.02$, and this agent now recruits to nest $1$ with this probability.
+
+\section{Results}
+
+Each of the above models was tested independently. Code is available \href{https://github.com/LSaldyt/temnothorax}{online} \footnote{https://github.com/LSaldyt/temnothorax} so that results can be replicated. 
+
+First are the ordinary differential equation models.
+Originally, Pratt (2002) investigated quorum threshold ($T$), but their model depends largely on two other parameters: $\alpha$, for nest quality, and $\phi$, for nest distance.
+Convergence time was explored as a function of these three parameters. 
+Convergence time is defined as the number of timesteps taken to reach a population of $95\%$ at the correct nest.
+A cutoff of $1000$ iterations was used, such that a simulation running for longer than this was considered divergent (this is similar to how the mandelbrot set is calculated).
+
+Figure \ref{fig:convergence_times} explores convergence as a function of quorum threshold and quality of first nest. 
+$\beta$ (quality of second nest) is kept at $0.05$ while $\alpha$ (quality of first nest) is varied.
+At the same time, quorum threshold is also varied from $0$ to $30$ in increments of $2$.
+This results in high convergence times centered around equal nest qualities, which shows the intuitive result that nests of similar qualities are hard to pick between.
+Additionally, a lower quorum threshold actually \emph{increases} convergence time, which is a counter-intuitive result.
+
+\plot{convergence_times}{Convergence times based on nest quality}{0.6}
+
+Figure \ref{fig:distance_convergence_times} explores convergence as a function of quorum threshold and distance of second nest. 
+$\phi_a$ (distance of first nest) is kept at $0.01$ while $\phi_b$ (distance of second nest) is varied.
+At the same time, quorum threshold is also varied from $0$ to $30$ in increments of $2$.
+
+In Figure \ref{fig:distance_convergence_times}, for $T > 10$, there is a clear pattern between threshold and nest distance. 
+For uniform (i.e. equal) nest distances, increasing quorum threshold increases convergence time.
+
+In Figure \ref{fig:distance_convergence_times_low_T}, for $T <= 10$\dots
+
+\plot{distance_convergence_times}{Convergence times based on nest distance}{0.6}
+
+\plot{distance_convergence_times_low_T}{$T < 10$ convergence times}{0.6}
+
+\plot{agent_based_population_model}{Basic population model}{0.6}
+
+% \includegraphics[scale=1.0]{distance_convergence_times_t_over_10}
+% \includegraphics[scale=1.0]{populations}
+% agent_based_population_model.png  convergance_times.png  distance_convergance_times_low_T.png  distance_convergance_times.png  distance_convergance_times_t_over_10.png  populations.png
+
+
+\subsection{Bibliography}
+  \bibliography{sources/insects,sources/brains,sources/ant_system,sources/networks,sources/misc}
 
 \footnotesize
 \bibliographystyle{apalike}
