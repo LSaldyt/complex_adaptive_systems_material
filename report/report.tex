@@ -1,4 +1,5 @@
-\documentclass[letterpaper]{article}
+%\documentclass[letterpaper]{article}
+\documentclass{article}
 \usepackage{hyperref}
 \usepackage{natbib,alifeconf}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
@@ -44,34 +45,47 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 
-\title{Models of Decision Making in the Rock Ant Temnothorax Albipennis}
+% \title{Models of Decision Making in the Rock Ant Temnothorax Albipennis}
+\title{Convergence Time in Feedback-loop based Decision Making for the Rock Ant Temnothorax Albipennis}
 \date{\today}
 \author{Lucas Saldyt}
-
 \begin{document}
 \maketitle
 
 \begin{abstract}
-    Ants of the genus Temnothorax display the captivating ability to choose optimally between nest sites in an entirely decentralized, error correcting, and self-organizing process.
-    First, this paper reviews previous models of Temnothorax decision making, and simplifies and then analyzes them.
-    Specifically, it shows that previous agent based models can be expressed with far fewer states and transitions. 
-    It also extends previous models of population dynamics.
-    Secondly, this paper aims to evaluate the applications of this behavior to computer science.
+    Rock ants (Temnothorax Albipennis) display the captivating ability to choose optimally between nest sites in a partially decentralized, error correcting, and self-organizing process.
+    Often, Temnothorax nests are fragile, which leads to frequent colony migrations where there are multiple options for a new nest site.
+    This paper reviews and simplifies models of Temnothorax nest-decision making, and reduces them to a simple feedback loop.
+    Then, this paper shows the dynamics of the decision feedback loop, and how it relies, in particular, on the ability of individuals to make accurate independent assessments.
 \end{abstract}
 
 \section{Introduction}
 
-%% Temnothorax nest choice is worth studying because decentralized and self-organizing algorithms are  
+%% Ants prefer thicker, darker nests [ Mallon 2001 ].
+
+Ant nest choice is deeper than it may initially seem.
+First, the entire colony needs to cooperate during migration, which is a potentially risky task.
+In particular, because individual ants find new nests stochastically, there is potential for colony splitting when different ants select different nests (i.e. ant \emph{a} leads half of the colony to nest $1$, while ant \emph{b} leads the other half of the colony to nest $2$).
+However, there exist natural mechanisms to prevent this.
+Namely, the ants will wait until the number of ants at a target colony exceeds a threshold, known as the quorum threshold (which is very similar in principle to the threshold in a drift-diffusion model) [cite drift diffusion model].
+Additionally, carrying of active ants will fix colony splits, if they occur, and reverse tandem runs are theorized to do the same [cite Pratt 2002]. 
+
+The quorum threshold influences a more general and equally important principle, the principle of \emph{graded commitment}.
+In nature, graded commitment has discrete levels based on different recruiting mechanisms: direct tandem runs (leading of other ants), transportations (carrying of other ants), and reverse tandem runs (leading of other ants, but in the opposite direction). 
+Early work set out to describe the purpose and importance of each of these mechanisms, and this is discussed further along in the introduction.
+Tandem runs represent a lower level of commitment than transportations, because tandem runs allow ants to learn the route, and then asses the new site for themselves, while transports do not allow route learning.
+So, it is the quorum threshold which allows the transitions between these two levels of commitment, and the quorum threshold is reached by a feedback loop based on individual assessments of the site's quality. The final agent-based model with show an abstract version of these dynamics, where it is easier to see the importance of individual assessment.
 
 \subsection{Summary (Mallon 2001)}
 
-Nest choice is deeper than may initially seem.
-First of all, Temnothorax Albipennis colonies generally have relatively small sizes , which in theory limits decision making ability, but in practice does not [cite mallon 2002]. 
-Ants are able to use graded assessment to make decisions efficiently even though their colony size is small.
+Temnothorax Albipennis colonies generally have relatively small sizes, which makes errors more likely. However, ants are able to use graded assessment to make decisions efficiently even though their colony size is small. In the agent based model, it is easy to see how unlucky noisy assessment can send the decision feedback loop in the wrong direction.
 
-Additionally, a small number of comparisons are actually made between colonies. 
+Additionally, a small number of comparisons are actually made between two nest sites.
 Mallon 2001 publishes three experiments with $86\%, 46\%$ and $32\%$ direct comparison, which indicates the presence of decentralized behavior.
-Ants seem to use peer rate estimation to decide on the quality of a particular colony: instead of counting the number of ants at a colony, they estimate the total number from the frequency of ants (if many ants are seen over a brief period of time, then an ant knows that the current location has a large number of ants).
+However, there is also good evidence that individual ants that have seen two sites know which is the better of the two.
+
+With respect to quorum threshold, ants seem to use peer rate estimation to decide on the quality of a particular colony: instead of counting the number of ants at a colony, they estimate the total number from the frequency of ants (if many ants are seen over a brief period of time, then an ant knows that the current location has a large number of ants).
+
 
 %% \begin{itemize}
 %%     \item How does small colony size affect decision making?
@@ -83,14 +97,12 @@ Ants seem to use peer rate estimation to decide on the quality of a particular c
 %%         \sitem{\mcolor{red}{Nestmate interaction rate} for estimation of colony/environment state}
 %% \end{itemize}
 
-When deciding on nests, ants actually use a variety of different recruiting mechanisms: Direct tandem runs (leading of other ants), transportations (carrying of other ants), and reverse tandem runs (leading of other ants, but in the opposite direction). 
-Early work set out to describe the purpose and importance of each of these mechanisms.
 
 \subsection{Summary (Pratt 2002, 2005)}
 
 Each recruitment mechanism has different advantages. Tandem running allows learning of the route to a nest as well as the deposition of pheromones along the route. 
 Later in the decision process, ants switch to ``transport`` recruitment, where they literally carry other ants. 
-This mechanism triggers when ants know that a destination nest has a large number of ants (is above the quorum, or threshold, which is estimated by encounter rate).
+This mechanism triggers when ants know that a destination nest has a large number of ants (is above the quorum, or threshold, which is estimated by encounter rate), and as discussed previously, this threshold acts as error-correction.
 
 Faster recruitment to better sites allows decentralized optimal choice without direct comparison.
 In other words, when an ant encounters a good site, it recruits to that site very quickly, which causes positive feedback when subsequent ants encounter and recruit to the same site.

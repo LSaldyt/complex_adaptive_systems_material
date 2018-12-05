@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  28 NOV 2018 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  5 DEC 2018 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,26 +498,26 @@ File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
 ) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 52.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring OFF on input line 51.
+Package hyperref Info: Link coloring OFF on input line 52.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -527,9 +527,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count130
 )
-LaTeX Info: Redefining \ref on input line 51.
-LaTeX Info: Redefining \pageref on input line 51.
-LaTeX Info: Redefining \nameref on input line 51.
+LaTeX Info: Redefining \ref on input line 52.
+LaTeX Info: Redefining \pageref on input line 52.
+LaTeX Info: Redefining \nameref on input line 52.
  (./report.out) (./report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
@@ -566,56 +566,52 @@ e
 ))
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 230.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 242.
 
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 230.
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--264
-
- []
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 242.
 
 Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--280
+Underfull \hbox (badness 10000) in paragraph at lines 267--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Overfull \hbox (11.93367pt too wide) detected at line 322
+Underfull \hbox (badness 10000) in paragraph at lines 279--292
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Overfull \hbox (11.93367pt too wide) detected at line 334
  []$[]  [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 S \OMS/cmsy/m/n/10 ^^C [] [] ^^@ 
 \OML/cmm/m/it/10 ^^^[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U[]L[] \OMS/cmsy
 /m/n/10 ^^@ \OML/cmm/m/it/10 ^^\C[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^[[]A[]
@@ -624,22 +620,17 @@ Overfull \hbox (11.93367pt too wide) detected at line 322
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
@@ -648,53 +639,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
 [3]
-<convergence_times.png, id=56, 462.528pt x 346.896pt>
+<convergence_times.png, id=52, 462.528pt x 346.896pt>
 File: convergence_times.png Graphic file (type png)
 <use convergence_times.png>
-Package pdftex.def Info: convergence_times.png  used on input line 443.
+Package pdftex.def Info: convergence_times.png  used on input line 455.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 443--443
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 455--455
 [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<distance_convergence_times.png, id=61, 462.528pt x 346.896pt>
+<distance_convergence_times.png, id=57, 462.528pt x 346.896pt>
 File: distance_convergence_times.png Graphic file (type png)
 <use distance_convergence_times.png>
-Package pdftex.def Info: distance_convergence_times.png  used on input line 454
+Package pdftex.def Info: distance_convergence_times.png  used on input line 466
 .
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 454--454
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 466--466
 [][] 
  []
 
-<distance_convergence_times_low_T.png, id=62, 462.528pt x 346.896pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<distance_convergence_times_low_T.png, id=58, 462.528pt x 346.896pt>
 File: distance_convergence_times_low_T.png Graphic file (type png)
 <use distance_convergence_times_low_T.png>
 Package pdftex.def Info: distance_convergence_times_low_T.png  used on input li
-ne 456.
+ne 468.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 456--456
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 468--468
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<agent_based_population_model.png, id=63, 462.528pt x 346.896pt>
+<agent_based_population_model.png, id=59, 462.528pt x 346.896pt>
 File: agent_based_population_model.png Graphic file (type png)
 <use agent_based_population_model.png>
 Package pdftex.def Info: agent_based_population_model.png  used on input line 4
-58.
+70.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 458--458
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 470--470
 [][] 
  []
 
@@ -703,28 +699,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 No file report.bbl.
 No file report.bbl.
-[4 <./convergence_times.png> <./distance_convergence_times.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 473.
- [5
-
- <./distance_convergence_times_low_T.png> <./agent_based_population_model.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 473.
+[4 <./convergence_times.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
+ [5 <./distance_convergence_times.png> <./distance_convergence_times_low_T.png>
+ <./agent_based_population_model.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 473.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 473.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 485.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 473.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 485.
  ) 
 Here is how much of TeX's memory you used:
  16183 strings out of 492642
  303681 string characters out of 6135566
- 383221 words of memory out of 5000000
+ 383227 words of memory out of 5000000
  19764 multiletter control sequences out of 15000+600000
  24003 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,67p,415b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,67p,415b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -734,7 +729,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (5 pages, 220502 bytes).
+Output written on report.pdf (5 pages, 223393 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
