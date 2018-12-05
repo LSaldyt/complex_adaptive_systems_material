@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  27 NOV 2018 09:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  3 DEC 2018 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,52 +1006,97 @@ Overfull \vbox (5.08832pt too high) detected at line 257
 
 [22
 
- <./distance_convergance_times_t_over_10.png>] [23
+ <./distance_convergance_times_t_over_10.png>]
+<populations_saldyt_2018.png, id=150, 462.528pt x 346.896pt>
+File: populations_saldyt_2018.png Graphic file (type png)
+<use populations_saldyt_2018.png>
+Package pdftex.def Info: populations_saldyt_2018.png  used on input line 261.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
-] [24
+Overfull \hbox (16.47751pt too wide) in paragraph at lines 261--261
+[][]  
+ []
 
-] [25
+
+Overfull \vbox (5.08832pt too high) detected at line 261
+ []
+
+[23
+
+ <./populations_saldyt_2018.png>]
+<populations_saldyt_2018_no_sigma.png, id=157, 462.528pt x 346.896pt>
+File: populations_saldyt_2018_no_sigma.png Graphic file (type png)
+<use populations_saldyt_2018_no_sigma.png>
+Package pdftex.def Info: populations_saldyt_2018_no_sigma.png  used on input li
+ne 265.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+Overfull \hbox (16.47751pt too wide) in paragraph at lines 265--265
+[][]  
+ []
+
+
+Overfull \vbox (5.08832pt too high) detected at line 265
+ []
+
+[24
+
+ <./populations_saldyt_2018_no_sigma.png>] [25
+
+] [26
+
+] [27
 
 ]
-<agent_based_population_model.png, id=167, 462.528pt x 346.896pt>
+<agent_based_population_model.png, id=181, 462.528pt x 346.896pt>
 File: agent_based_population_model.png Graphic file (type png)
 <use agent_based_population_model.png>
 Package pdftex.def Info: agent_based_population_model.png  used on input line 2
-86.
+98.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
-Overfull \hbox (16.47751pt too wide) in paragraph at lines 286--286
+Overfull \hbox (16.47751pt too wide) in paragraph at lines 298--298
 [][]  
  []
 
 
-Overfull \vbox (5.08832pt too high) detected at line 286
+Overfull \vbox (5.08832pt too high) detected at line 298
  []
 
-[26
+[28
 
  <./agent_based_population_model.png>]
-<populations.png, id=174, 462.528pt x 346.896pt>
-File: populations.png Graphic file (type png)
-<use populations.png>
-Package pdftex.def Info: populations.png  used on input line 290.
+<agent_based_population_model2.png, id=188, 462.528pt x 346.896pt>
+File: agent_based_population_model2.png Graphic file (type png)
+<use agent_based_population_model2.png>
+Package pdftex.def Info: agent_based_population_model2.png  used on input line 
+302.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
-Overfull \hbox (16.47751pt too wide) in paragraph at lines 290--290
+Overfull \hbox (16.47751pt too wide) in paragraph at lines 302--302
 [][]  
  []
 
 
-Overfull \vbox (5.08832pt too high) detected at line 290
+Overfull \vbox (5.08832pt too high) detected at line 302
  []
 
-[27
+[29
 
- <./populations.png>] (./presentation.bbl
+ <./agent_based_population_model2.png>]
+<distance_agent_convergence_times.png, id=195, 462.528pt x 346.896pt>
+File: distance_agent_convergence_times.png Graphic file (type png)
+<use distance_agent_convergence_times.png>
+Package pdftex.def Info: distance_agent_convergence_times.png  used on input li
+ne 310.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+ [30
+
+ <./distance_agent_convergence_times.png>] (./presentation.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 8.
 
-) [28
+) [31
 
 ]
 \tf@nav=\write6
@@ -1063,19 +1108,19 @@ LaTeX Warning: Empty `thebibliography' environment on input line 8.
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 316.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 316.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 296.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 316.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 316.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20216 strings out of 492642
- 396148 string characters out of 6135566
+ 20247 strings out of 492642
+ 396927 string characters out of 6135566
  476195 words of memory out of 5000000
- 23601 multiletter control sequences out of 15000+600000
+ 23623 multiletter control sequences out of 15000+600000
  14850 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,19n,65p,826b,601s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1090,10 +1135,10 @@ e1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on presentation.pdf (28 pages, 569774 bytes).
+Output written on presentation.pdf (31 pages, 668572 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
