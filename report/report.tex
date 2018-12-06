@@ -23,7 +23,7 @@
 
 \newcommand{\plot}[3]{
     \begin{figure}[h]
-        \includegraphics[keepaspectratio=true,scale=#3]{#1}
+        \includegraphics[keepaspectratio=true,scale=#3]{plots/#1}
         \caption{#2}
         \label{fig:#1}
     \end{figure}
@@ -425,12 +425,13 @@ Once the discovery action is triggered, a multinomial choice is made, with the f
 \end{itemize}
 
 Suppose an agent encounters item $1$. This agent's commitment strength is now updated to $0.02$, and this agent now recruits to nest $1$ with this probability.
+While simple, this model is able to explain the important behavior in Temnothorax decision making.
 
 \section{Results}
 
 Each of the above models was tested independently. Code is available \href{https://github.com/LSaldyt/temnothorax}{online} \footnote{https://github.com/LSaldyt/temnothorax} so that results can be replicated. 
 
-First are the ordinary differential equation models.
+\subsection{ODE Results}
 Originally, Pratt (2002) investigated quorum threshold ($T$), but their model depends largely on two other parameters: $\alpha$, for nest quality, and $\phi$, for nest distance.
 Convergence time was explored as a function of these three parameters. 
 Convergence time is defined as the number of timesteps taken to reach a population of $95\%$ at the correct nest.
