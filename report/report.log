@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.25)  5 DEC 2018 11:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.5)  6 DEC 2018 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -39,7 +39,7 @@ Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -47,7 +47,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -87,7 +87,7 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@pagecounter=\count89
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -96,33 +96,33 @@ Now handling font encoding PD1 ...
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4509.
-Package hyperref Info: Link nesting OFF on input line 4514.
-Package hyperref Info: Hyper index ON on input line 4517.
-Package hyperref Info: Plain pages OFF on input line 4524.
-Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4762.
+Package hyperref Info: Bookmarks ON on input line 4788.
 \c@Hy@tempcnt=\count91
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5115.
+LaTeX Info: Redefining \url on input line 5141.
 \XeTeXLinkMargin=\dimen104
 \Fld@menulength=\count92
 \Field@Width=\dimen105
 \Fld@charsize=\dimen106
-Package hyperref Info: Hyper figures OFF on input line 6369.
-Package hyperref Info: Link nesting OFF on input line 6374.
-Package hyperref Info: Hyper index ON on input line 6377.
-Package hyperref Info: backreferencing OFF on input line 6384.
-Package hyperref Info: Link coloring OFF on input line 6389.
-Package hyperref Info: Link coloring with OCG OFF on input line 6394.
-Package hyperref Info: PDF/A mode OFF on input line 6399.
-LaTeX Info: Redefining \ref on input line 6439.
-LaTeX Info: Redefining \pageref on input line 6443.
+Package hyperref Info: Hyper figures OFF on input line 6396.
+Package hyperref Info: Link nesting OFF on input line 6401.
+Package hyperref Info: Hyper index ON on input line 6404.
+Package hyperref Info: backreferencing OFF on input line 6411.
+Package hyperref Info: Link coloring OFF on input line 6416.
+Package hyperref Info: Link coloring with OCG OFF on input line 6421.
+Package hyperref Info: PDF/A mode OFF on input line 6426.
+LaTeX Info: Redefining \ref on input line 6466.
+LaTeX Info: Redefining \pageref on input line 6470.
 \Hy@abspage=\count93
 \c@Item=\count94
 \c@Hfootnote=\count95
@@ -130,7 +130,7 @@ LaTeX Info: Redefining \pageref on input line 6443.
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+File: hpdftex.def 2018/09/30 v6.88a Hyperref driver for pdfTeX
 \Fld@listcount=\count96
 \c@bookmark@seq@number=\count97
 
@@ -601,96 +601,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--278
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--292
+Overfull \hbox (19.23921pt too wide) in paragraph at lines 279--291
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
 
-Overfull \hbox (11.93367pt too wide) detected at line 334
- []$[]  [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 S \OMS/cmsy/m/n/10 ^^C [] [] ^^@ 
-\OML/cmm/m/it/10 ^^^[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^U[]L[] \OMS/cmsy
-/m/n/10 ^^@ \OML/cmm/m/it/10 ^^\C[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^[[]A[]
- \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^[[]L[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10
- ^^[[]C[][]$ []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
  []
 
 [3]
-<convergence_times.png, id=52, 462.528pt x 346.896pt>
+<convergence_times.png, id=53, 462.528pt x 346.896pt>
 File: convergence_times.png Graphic file (type png)
 <use convergence_times.png>
-Package pdftex.def Info: convergence_times.png  used on input line 455.
+Package pdftex.def Info: convergence_times.png  used on input line 446.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 455--455
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 446--446
 [][] 
  []
 
-<distance_convergence_times.png, id=57, 462.528pt x 346.896pt>
+<distance_convergence_times.png, id=58, 462.528pt x 346.896pt>
 File: distance_convergence_times.png Graphic file (type png)
 <use distance_convergence_times.png>
-Package pdftex.def Info: distance_convergence_times.png  used on input line 466
+Package pdftex.def Info: distance_convergence_times.png  used on input line 457
 .
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 466--466
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 457--457
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<distance_convergence_times_low_T.png, id=58, 462.528pt x 346.896pt>
+<distance_convergence_times_low_T.png, id=59, 462.528pt x 346.896pt>
 File: distance_convergence_times_low_T.png Graphic file (type png)
 <use distance_convergence_times_low_T.png>
 Package pdftex.def Info: distance_convergence_times_low_T.png  used on input li
-ne 468.
+ne 459.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 468--468
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 459--459
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<agent_based_population_model.png, id=59, 462.528pt x 346.896pt>
+<agent_based_population_model.png, id=60, 462.528pt x 346.896pt>
 File: agent_based_population_model.png Graphic file (type png)
 <use agent_based_population_model.png>
 Package pdftex.def Info: agent_based_population_model.png  used on input line 4
-70.
+61.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 470--470
+Overfull \hbox (38.12456pt too wide) in paragraph at lines 461--461
 [][] 
  []
 
@@ -700,26 +706,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 No file report.bbl.
 No file report.bbl.
 [4 <./convergence_times.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
  [5 <./distance_convergence_times.png> <./distance_convergence_times_low_T.png>
  <./agent_based_population_model.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 485.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 476.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 476.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 485.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 16183 strings out of 492642
- 303681 string characters out of 6135566
- 383227 words of memory out of 5000000
- 19764 multiletter control sequences out of 15000+600000
+ 16192 strings out of 492639
+ 303821 string characters out of 6135497
+ 382654 words of memory out of 5000000
+ 19775 multiletter control sequences out of 15000+600000
  24003 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,67p,415b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,67p,415b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -729,7 +735,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (5 pages, 223393 bytes).
+Output written on report.pdf (5 pages, 222214 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
