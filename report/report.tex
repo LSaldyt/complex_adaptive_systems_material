@@ -56,7 +56,7 @@
     Rock ants (Temnothorax Albipennis) display the captivating ability to choose optimally between nest sites in a partially decentralized, error correcting, and self-organizing process.
     Often, Temnothorax nests are fragile, which leads to frequent colony migrations where there are multiple options for a new nest site.
     This paper reviews and simplifies models of Temnothorax nest-decision making, and reduces them to a simple feedback loop.
-    Then, this paper shows the dynamics of the decision feedback loop, and how it relies, in particular, on the ability of individuals to make accurate independent assessments.
+    Then, this paper shows the dynamics of the decision feedback loop, and how it relies, in particular, on the ability of individuals to make accurate independent assessments, and remember which nests are superior to others.
 \end{abstract}
 
 \section{Introduction}
@@ -437,32 +437,35 @@ Convergence time was explored as a function of these three parameters.
 Convergence time is defined as the number of timesteps taken to reach a population of $95\%$ at the correct nest.
 A cutoff of $1000$ iterations was used, such that a simulation running for longer than this was considered divergent (this is similar to how the mandelbrot set is calculated).
 
-Figure \ref{fig:convergence_times} explores convergence as a function of quorum threshold and quality of first nest. 
-$\beta$ (quality of second nest) is kept at $0.05$ while $\alpha$ (quality of first nest) is varied.
-At the same time, quorum threshold is also varied from $0$ to $30$ in increments of $2$.
-This results in high convergence times centered around equal nest qualities, which shows the intuitive result that nests of similar qualities are hard to pick between.
-Additionally, a lower quorum threshold actually \emph{increases} convergence time, which is a counter-intuitive result.
+\plot{passive_populations_pratt_2002}{}{0.6}
+\plot{active_populations_pratt_2002.png}{}{0.6}
+\plot{passive_populations_saldyt_2018_alt}{}{0.6}
+\plot{active_populations_saldyt_2018_alt}{}{0.6}
+\plot{quality_ode_convergence_times}{}{0.6}
+\plot{distance_ode_convergence_times}{}{0.6}
 
-\plot{convergence_times}{Convergence times based on nest quality}{0.6}
+% Figure \ref{fig:convergence_times} explores convergence as a function of quorum threshold and quality of first nest. 
+% $\beta$ (quality of second nest) is kept at $0.05$ while $\alpha$ (quality of first nest) is varied.
+% At the same time, quorum threshold is also varied from $0$ to $30$ in increments of $2$.
+% This results in high convergence times centered around equal nest qualities, which shows the intuitive result that nests of similar qualities are hard to pick between.
+% Additionally, a lower quorum threshold actually \emph{increases} convergence time, which is a counter-intuitive result.
+% 
+% %% \plot{convergence_times}{Convergence times based on nest quality}{0.6}
+% 
+% Figure \ref{fig:distance_convergence_times} explores convergence as a function of quorum threshold and distance of second nest. 
+% $\phi_a$ (distance of first nest) is kept at $0.01$ while $\phi_b$ (distance of second nest) is varied.
+% At the same time, quorum threshold is also varied from $0$ to $30$ in increments of $2$.
+% 
+% In Figure \ref{fig:distance_convergence_times}, for $T > 10$, there is a clear pattern between threshold and nest distance. 
+% For uniform (i.e. equal) nest distances, increasing quorum threshold increases convergence time.
+% 
+% In Figure \ref{fig:distance_convergence_times_low_T}, for $T <= 10$\dots
 
-Figure \ref{fig:distance_convergence_times} explores convergence as a function of quorum threshold and distance of second nest. 
-$\phi_a$ (distance of first nest) is kept at $0.01$ while $\phi_b$ (distance of second nest) is varied.
-At the same time, quorum threshold is also varied from $0$ to $30$ in increments of $2$.
+%% \plot{distance_convergence_times}{Convergence times based on nest distance}{0.6}
 
-In Figure \ref{fig:distance_convergence_times}, for $T > 10$, there is a clear pattern between threshold and nest distance. 
-For uniform (i.e. equal) nest distances, increasing quorum threshold increases convergence time.
+%% \plot{distance_convergence_times_low_T}{$T < 10$ convergence times}{0.6}
 
-In Figure \ref{fig:distance_convergence_times_low_T}, for $T <= 10$\dots
-
-\plot{distance_convergence_times}{Convergence times based on nest distance}{0.6}
-
-\plot{distance_convergence_times_low_T}{$T < 10$ convergence times}{0.6}
-
-\plot{agent_based_population_model}{Basic population model}{0.6}
-
-% \includegraphics[scale=1.0]{distance_convergence_times_t_over_10}
-% \includegraphics[scale=1.0]{populations}
-% agent_based_population_model.png  convergance_times.png  distance_convergance_times_low_T.png  distance_convergance_times.png  distance_convergance_times_t_over_10.png  populations.png
+%% \plot{agent_based_population_model}{Basic population model}{0.6}
 
 
 \subsection{Bibliography}
