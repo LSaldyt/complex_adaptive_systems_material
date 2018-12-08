@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.5)  6 DEC 2018 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.5)  7 DEC 2018 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -651,105 +651,122 @@ Underfull \hbox (badness 10000) in paragraph at lines 383--384
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+
+Overfull \hbox (30.84389pt too wide) in paragraph at lines 442--454
+[][] 
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 461--464
+[]\OT1/ptm/m/n/10 The model was im-ple-mented us-ing the [TODO cite
+ []
+
 <plots/passive_populations_pratt_2002.png, id=52, 462.528pt x 346.896pt>
 File: plots/passive_populations_pratt_2002.png Graphic file (type png)
 <use plots/passive_populations_pratt_2002.png>
 Package pdftex.def Info: plots/passive_populations_pratt_2002.png  used on inpu
-t line 440.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 440--440
-[][] 
- []
-
-<plots/active_populations_pratt_2002.png, id=54, 462.528pt x 346.896pt>
+t line 465.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+[4 <./plots/passive_populations_pratt_2002.png>]
+<plots/active_populations_pratt_2002.png, id=70, 462.528pt x 346.896pt>
 File: plots/active_populations_pratt_2002.png Graphic file (type png)
 <use plots/active_populations_pratt_2002.png>
 Package pdftex.def Info: plots/active_populations_pratt_2002.png  used on input
- line 441.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+ line 471.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 441--441
-[][] 
- []
 
-<plots/passive_populations_saldyt_2018_alt.png, id=55, 462.528pt x 346.896pt>
+LaTeX Warning: Reference `fig:passive_populations_saldyt_2018' on page 5 undefi
+ned on input line 489.
+
+<plots/passive_populations_saldyt_2018_alt.png, id=72, 462.528pt x 346.896pt>
 File: plots/passive_populations_saldyt_2018_alt.png Graphic file (type png)
 <use plots/passive_populations_saldyt_2018_alt.png>
 Package pdftex.def Info: plots/passive_populations_saldyt_2018_alt.png  used on
- input line 442.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 442--442
-[][] 
- []
-
+ input line 494.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<plots/active_populations_saldyt_2018_alt.png, id=56, 462.528pt x 346.896pt>
+
+LaTeX Warning: Reference `fig:active_populations_saldyt_2018' on page 5 undefin
+ed on input line 496.
+
+<plots/active_populations_saldyt_2018_alt.png, id=73, 462.528pt x 346.896pt>
 File: plots/active_populations_saldyt_2018_alt.png Graphic file (type png)
 <use plots/active_populations_saldyt_2018_alt.png>
 Package pdftex.def Info: plots/active_populations_saldyt_2018_alt.png  used on 
-input line 443.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 443--443
-[][] 
- []
-
+input line 500.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<plots/passive_populations_saldyt_2018_alt_low_T.png, id=77, 462.528pt x 346.89
+6pt>
+File: plots/passive_populations_saldyt_2018_alt_low_T.png Graphic file (type pn
+g)
+<use plots/passive_populations_saldyt_2018_alt_low_T.png>
+Package pdftex.def Info: plots/passive_populations_saldyt_2018_alt_low_T.png  u
+sed on input line 508.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<plots/quality_ode_convergence_times.png, id=57, 462.528pt x 346.896pt>
+<plots/active_populations_saldyt_2018_alt_low_T.png, id=78, 462.528pt x 346.896
+pt>
+File: plots/active_populations_saldyt_2018_alt_low_T.png Graphic file (type png
+)
+<use plots/active_populations_saldyt_2018_alt_low_T.png>
+Package pdftex.def Info: plots/active_populations_saldyt_2018_alt_low_T.png  us
+ed on input line 509.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<plots/quality_ode_convergence_times.png, id=79, 462.528pt x 346.896pt>
 File: plots/quality_ode_convergence_times.png Graphic file (type png)
 <use plots/quality_ode_convergence_times.png>
 Package pdftex.def Info: plots/quality_ode_convergence_times.png  used on input
- line 444.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 444--444
-[][] 
- []
-
+ line 513.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<plots/distance_ode_convergence_times.png, id=58, 462.528pt x 346.896pt>
+<plots/distance_ode_convergence_times.png, id=80, 462.528pt x 346.896pt>
 File: plots/distance_ode_convergence_times.png Graphic file (type png)
 <use plots/distance_ode_convergence_times.png>
 Package pdftex.def Info: plots/distance_ode_convergence_times.png  used on inpu
-t line 445.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-
-Overfull \hbox (38.12456pt too wide) in paragraph at lines 445--445
-[][] 
- []
-
+t line 514.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 No file report.bbl.
 No file report.bbl.
-[4 <./plots/passive_populations_pratt_2002.png> <./plots/active_populations_pra
-tt_2002.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
- [5 <./plots/passive_populations_saldyt_2018_alt.png> <./plots/active_populatio
-ns_saldyt_2018_alt.png> <./plots/quality_ode_convergence_times.png> <./plots/di
-stance_ode_convergence_times.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
+[5 <./plots/active_populations_pratt_2002.png> <./plots/passive_populations_sal
+dyt_2018_alt.png> <./plots/active_populations_saldyt_2018_alt.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 550.
+ [6 <./plots/passive_populations_saldyt_2018_alt_low_T.png> <./plots/active_pop
+ulations_saldyt_2018_alt_low_T.png> <./plots/quality_ode_convergence_times.png>
+ <./plots/distance_ode_convergence_times.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 550.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 550.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 550.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
  ) 
 Here is how much of TeX's memory you used:
- 16207 strings out of 492639
- 304580 string characters out of 6135497
- 382577 words of memory out of 5000000
- 19784 multiletter control sequences out of 15000+600000
+ 16228 strings out of 492639
+ 305339 string characters out of 6135497
+ 382621 words of memory out of 5000000
+ 19796 multiletter control sequences out of 15000+600000
  24003 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,67p,415b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -762,10 +779,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (5 pages, 323022 bytes).
+Output written on report.pdf (6 pages, 403640 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

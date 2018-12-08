@@ -437,12 +437,83 @@ Convergence time was explored as a function of these three parameters.
 Convergence time is defined as the number of timesteps taken to reach a population of $95\%$ at the correct nest.
 A cutoff of $1000$ iterations was used, such that a simulation running for longer than this was considered divergent (this is similar to how the mandelbrot set is calculated).
 
-\plot{passive_populations_pratt_2002}{}{0.6}
-\plot{active_populations_pratt_2002.png}{}{0.6}
-\plot{passive_populations_saldyt_2018_alt}{}{0.6}
-\plot{active_populations_saldyt_2018_alt}{}{0.6}
-\plot{quality_ode_convergence_times}{}{0.6}
-\plot{distance_ode_convergence_times}{}{0.6}
+In each of the following population plots, the parameters are the same: \\
+
+\begin{tabular}{ l | c | c | r }
+    \hline
+  Name          & 2002        & Value & Description (units = rate)\\ \hline
+  {$\phi_i$}      & $\mu_i$     & 0.13 & Finding nest $i$\\
+  {$\lambda_i$}   & $\lambda_i$ & 0.033 & Led by leaders to $i$\\
+  {$\alpha_i$}    & $k_i$       & 0.015, 0.02 & Assessors who accept nest $i$\\ \hline
+  {$\tau$}        & $\phi_i$    & 0.001  & Uniform transport rate $i$\\
+  $N$             & $N$    & 208  & Total number of ants\\
+  $M$             & $M$    & 3  & Total nests (including original)\\
+  $T$             & $T$    & 10 & Quorum threshold\\
+    \hline
+\end{tabular}
+
+
+\subsubsection{Pratt 2002 replications}
+The following figures represent runs of the ODE population model published in Pratt 2002.
+The passive population equations have been fixed to prevent unchecked growth of passive populations.
+Since this section is only replications, more interesting results follow in the sections after it. 
+
+The model was implemented using the [TODO cite Python ODE] package.
+Population dynamics were split into passive population plots and active population plots.
+Model changes were made one at a time so that new models could be compared to older models in stages, so it was clear which changes were causing which effects.
+
+\plot{passive_populations_pratt_2002}{}{0.5}
+
+Figure \ref{fig:passive_populations_pratt_2002} shows a nest-splitting event, which is remedied roughly around $75$ timesteps (An exact value is not crucial here, because convergence times will be discussed later).
+Movement of passive ants happens fairly early, which is strange, but the quorum threshold is low in this example.
+After the nest splitting, the ants are able to correct and eventually choose the correct nest (Which in this case is nest $1$, which has a quality of $0.02$ instead of nest $2$'s quality of $0.015$).
+
+\plot{active_populations_pratt_2002}{}{0.5}
+
+Figure \ref{fig:active_populations_pratt_2002} shows a more complete picture of what is happening in this scenario.
+First, the searching population (blue) declines steeply, and ants encounter sites $1$ and $2$ in equal number. 
+As ants enter the recruiting population, ants at site $1$ begin to outnumber other ants.
+Eventually, the entire active population moves into recruitment for the superior site, site $1$.
+
+These dynamics are replicated exactly if the recruiting population is split into separate populations for leading and carrying. Plots showing this are omitted, because they are identical to the plots of the Pratt 2002 ODE model, since $R_i = C_i + L_i$ when the models are compared.
+
+%% \plot{passive_populations_saldyt_2018}{}{0.5}
+%% \plot{active_populations_saldyt_2018}{}{0.5}
+
+\subsubsection{Updated ODE model}
+
+Replacing switching dynamics in the Pratt 2002 model yields slightly different behavior, but this is explainable.
+Now, any carrying population can move any other population.
+This actually means that (in the model at least) carrying will happen in both directions, and the nest will potentially split under certain conditions.
+Under the parameters shown, this population does not split, however.
+In \ref{fig:passive_populations_saldyt_2018}, the effect of a quorum threshold can be seen.
+During roughly the first $40$ timesteps, the passive population is constant.
+However, once quorum is met, passive ants are transported from nest $0$ to nest $2$ (Which is the superior nest in this experiment). 
+This differs with the original model in that there is no nest splitting (under these parameters).
+
+\plot{passive_populations_saldyt_2018_alt}{}{0.5}
+
+In the active population \ref{fig:active_populations_saldyt_2018}, it can be seen where the quorum occurs, and how the dynamics change after this point. 
+The leading population for the second nest (purple) all become carriers (pink).
+This causes a change in the rate for assessors of nest $2$ (green), which eventually lets the ants pick nest two.
+
+\plot{active_populations_saldyt_2018_alt}{}{0.5}
+
+With a different quorum threshold, temporary nest splitting can be reproduced.
+In figure \ref{fig:passive_populations_saldyt_2018_alt_low_T}, similar behavior to \ref{fig:passive_populations_pratt_2002} occurs. 
+Initially, there is a constant period before a quorum threshold is met.
+The quorum for nest $2$ is met before the quorum for nest $1$, and nest $2$ is eventually chosen.
+The times and effects of the quorum's being met can be seen in the active version of this population graph, in figure \ref{fig:active_populations_saldyt_2018_alt_low_T}.
+
+\plot{passive_populations_saldyt_2018_alt_low_T}{}{0.5}
+\plot{active_populations_saldyt_2018_alt_low_T}{}{0.5}
+
+\subsubsection{Convergence Time Results}
+
+\plot{quality_ode_convergence_times}{}{0.5}
+\plot{distance_ode_convergence_times}{}{0.5}
+
+\subsection{Agent Based Model Results}
 
 % Figure \ref{fig:convergence_times} explores convergence as a function of quorum threshold and quality of first nest. 
 % $\beta$ (quality of second nest) is kept at $0.05$ while $\alpha$ (quality of first nest) is varied.
@@ -450,7 +521,7 @@ A cutoff of $1000$ iterations was used, such that a simulation running for longe
 % This results in high convergence times centered around equal nest qualities, which shows the intuitive result that nests of similar qualities are hard to pick between.
 % Additionally, a lower quorum threshold actually \emph{increases} convergence time, which is a counter-intuitive result.
 % 
-% %% \plot{convergence_times}{Convergence times based on nest quality}{0.6}
+% %% \plot{convergence_times}{Convergence times based on nest quality}{0.5}
 % 
 % Figure \ref{fig:distance_convergence_times} explores convergence as a function of quorum threshold and distance of second nest. 
 % $\phi_a$ (distance of first nest) is kept at $0.01$ while $\phi_b$ (distance of second nest) is varied.
@@ -461,11 +532,11 @@ A cutoff of $1000$ iterations was used, such that a simulation running for longe
 % 
 % In Figure \ref{fig:distance_convergence_times_low_T}, for $T <= 10$\dots
 
-%% \plot{distance_convergence_times}{Convergence times based on nest distance}{0.6}
+%% \plot{distance_convergence_times}{Convergence times based on nest distance}{0.5}
 
-%% \plot{distance_convergence_times_low_T}{$T < 10$ convergence times}{0.6}
+%% \plot{distance_convergence_times_low_T}{$T < 10$ convergence times}{0.5}
 
-%% \plot{agent_based_population_model}{Basic population model}{0.6}
+%% \plot{agent_based_population_model}{Basic population model}{0.5}
 
 
 \subsection{Bibliography}
