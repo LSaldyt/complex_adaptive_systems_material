@@ -10,6 +10,7 @@ sns.set_style('darkgrid')
 
 def main(args):
     colony = 71
+    colony = 45
 
     if colony == 45:
         experiment = pandas.read_csv('C45Active1C.csv')
@@ -25,24 +26,30 @@ def main(args):
     #experiment = experiment[(experiment['speed (px/s)'] > 3)]
     #control    = control[(control['speed (px/s)'] > 3)]
     
-    maxSpeed = 100.0
+    maxSpeed = 4.0
+    minSpeed = 3.0
+    period = 30 # Period in seconds
 
     experiment['type'] = 'experiment'
     control['type']    = 'control'
     data = pandas.concat([experiment, control])
     data['second'] = data['frames'] // 30 # Convert frames to seconds
-    data['period'] = data['second'] // 20 # Define a period as thirty seconds
+    data['period'] = data['second'] // period # Define a period as thirty seconds
     print(data)
     #data = data.groupby('period')
 
     #data['speed'] = data['speed (px/s)'].apply(lambda x :  0 if x < 1e-7 else max(0, math.log(x, 10)))
-    data['speed'] = data['speed (px/s)'].apply(lambda x : max(0, min(x, maxSpeed)))
-    sns.violinplot(x='period', y='speed', hue='type', data=data, palette='muted', split=True)
-    plt.xlabel('Period (20 seconds)')
+    data['speed'] = data['speed (px/s)'].apply(lambda x : max(minSpeed, min(x, maxSpeed)))
+    sns.violinplot(x='period', y='speed', hue='type', data=data, palette='muted', split=True, cut=True)
+    plt.xlabel('Period ({} seconds)'.format(period))
     plt.ylabel('Distribution of speeds in pixels/second')
+    #ticks = [1, 2, 3, 4]
+    #labels = list(map(str, ticks))
+    #labels[-1] += '+'
+    #plt.yticks(ticks=ticks, labels=labels)
     plt.title('Changes in the distribution of speeds over time for colony {}'.format(colony))
     fig = matplotlib.pyplot.gcf()
-    fig.set_size_inches(18.5, 10.5)
+    fig.set_size_inches(8, 5)
     fig.savefig('violin_{}.png'.format(colony), dpi=300)
     plt.show()
 

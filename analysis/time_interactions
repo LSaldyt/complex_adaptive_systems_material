@@ -11,12 +11,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ids    = list(range(61))
-color     = 'black'
-alpha     = 0.8
-linewidth = 1.0
+color     = 'orange'
+alpha     = 1.0
+linewidth = 1.8
 dense     = False
 
-sns.set('poster', style='whitegrid')
+sns.set(style='whitegrid')
 
 def main(args):
     assert len(args) == 1, 'Usage: ./time_interactions [data.csv]'
@@ -58,7 +58,7 @@ def main(args):
         plt.plot(x, signal_path, marker='', color=color, linewidth=linewidth, alpha=alpha)
 
     for i in ids:
-        plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.8)
+        plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.5)
 
     time_unit_label = 'Frames (30hz)'
     
@@ -66,13 +66,7 @@ def main(args):
     plt.xlabel(time_unit_label)
     plt.ylim(0, 61)
     plt.ylabel('Ant ID')
-    plt.show()
-
-    plt.plot(frames, activeY)
-    plt.title('Active ants over time')
-    plt.xlabel(time_unit_label)
-    plt.ylim(0, 61)
-    plt.ylabel('Active ants')
+    plt.savefig('network_interactions.png', dpi=300)
     plt.show()
 
 if __name__ == '__main__':

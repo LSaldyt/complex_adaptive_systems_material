@@ -34,8 +34,8 @@ def main(args):
     plt.title('Changes in the distribution of speeds over time for colony 45')
     #plt.yticks(ticks=[0.5, 1.0, 1.5, 2.0], labels=['0.5', '1.0', '1.5', '2.0+'])
     fig = matplotlib.pyplot.gcf()
-    fig.set_size_inches(18.5, 10.5)
-    fig.savefig('violin.png', dpi=300)
+    fig.set_size_inches(8, 5)
+    fig.savefig('c45_violins', dpi=300)
     #plt.savefig('violin.png')
     plt.show()
 

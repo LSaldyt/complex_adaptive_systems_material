@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib
+import pandas
+import math
+import sys
+
+sns.set_style('darkgrid')
+
+def plot_fast(experiment, control, colony):
+    #experiment_medians = experiment.groupby('frames').median()
+    #control_medians    = control.groupby('frames').median()
+
+    experiment_medians = experiment.groupby('frames').mean()
+    control_medians    = control.groupby('frames').mean()
+
+    experiment_frames = experiment[experiment.id == 1]['frames'][1:]
+    experiment_speeds = experiment_medians['speed (px/s)'][1:]
+    control_frames    = control[control.id == 1]['frames'][1:]
+    control_speeds    = control_medians['speed (px/s)'][1:]
+
+    plt.plot(experiment_frames, experiment_speeds, color='orange', label='alarmed')
+    plt.plot(control_frames, control_speeds, color='black', label='control')
+    plt.xlabel('Frames (30hz)')
+    plt.ylabel('Mean speed (px/s)')
+    plt.title('Comparison between alarmed and control for colony 45 setting 1')
+    plt.legend()
+    plt.savefig('medians_{}.png'.format(colony), dpi=300)
+    plt.show()
+
+def main(args):
+    colony = 71
+    colony = 45
+
+    if colony == 45:
+        experiment = pandas.read_csv('C45Active1C.csv')
+        control    = pandas.read_csv('C45Control1C.csv')
+    elif colony == 71:
+        experiment = pandas.read_csv('C71Active1C.csv')
+        control    = pandas.read_csv('C71Control1C.csv')
+
+    plot_fast(experiment, control, colony)
+
+main([])
