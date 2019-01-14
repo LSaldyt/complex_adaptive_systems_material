@@ -18,7 +18,14 @@ dense     = True
 
 sns.set(style='whitegrid')
 
+norm = lambda x : max(min(x, 1.0), 0.0)
+
+interactionOpacity = 1.0
+anticolors = [(0.0, 1.0, 1.0), (51/255, 51/255, 201/255), (204/255, 51/255, 255/255), (0.0, 1.0, 0.0), (1.0, 153/255, 1.0), (1.0, 204/255, 0.0), (153/255, 0.0, 153/255)]
+anticolors = [c + (interactionOpacity,) for c in anticolors]
+
 def main(args):
+    alarmData = pandas.read_csv('alarm_strengths.csv')
     assert len(args) == 1, 'Usage: ./time_interactions [data.csv]'
     filename = args[0]
 
@@ -27,25 +34,31 @@ def main(args):
         lines = infile.read().split('\n')
         for line in lines[1:]:
             if line.strip() != '':
-                #t, a, b = list(map(lambda s : int(s.strip()), line.split(',')))
                 b, a, _, t = list(map(lambda s : int(s.strip()), line.split(',')))
                 t *= 30
                 interactions[t].append((a, b))
 
     frames = list(range(max(interactions.keys())))
 
-    active= 0
-    activeY = []
-    signal_paths = {}
-
+    for alarmRow in alarmData.iterrows():
+        i = alarmRow[0]
+        strength = alarmRow[1]
+        for j in ids:
+            plt.plot(frames[i:i+2], [j, j], color=(1.0, 0.0, 0.0, norm(strength[j])))
+        if i == 150: break;
+        print(i)
     for i in frames:
         if i in interactions:
-            for interaction in interactions[i]:
+            for j, interaction in enumerate(interactions[i]):
                 source, destination = interaction
-                plt.plot(frames[i:i+2], [source, destination], linestyle='--')
+                color = anticolors[j % len(anticolors)]
+                plt.plot([i,i+30], [source, destination], linestyle='--', marker='.', color=color,
+                         linewidth=2.0, markersize=10,
+                         dashes=(5, 5))
+        if i == 150: break;
 
-    for i in ids:
-        plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.5)
+    #for i in ids:
+    #    #plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.5)
 
     time_unit_label = 'Frames (30hz)'
     
