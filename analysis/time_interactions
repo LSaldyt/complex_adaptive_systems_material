@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ids    = list(range(61))
-color     = 'orange'
+color     = 'red'
 alpha     = 1.0
 linewidth = 1.8
-dense     = False
+dense     = True
 
 sns.set(style='whitegrid')
 
@@ -28,7 +28,8 @@ def main(args):
         for line in lines[1:]:
             if line.strip() != '':
                 #t, a, b = list(map(lambda s : int(s.strip()), line.split(',')))
-                b, a, t = list(map(lambda s : int(s.strip()), line.split(',')))
+                b, a, _, t = list(map(lambda s : int(s.strip()), line.split(',')))
+                t *= 30
                 interactions[t].append((a, b))
 
     frames = list(range(max(interactions.keys())))
@@ -41,21 +42,7 @@ def main(args):
         if i in interactions:
             for interaction in interactions[i]:
                 source, destination = interaction
-                if source in signal_paths:
-                    signal_paths[destination] = deepcopy(signal_paths[source])
-                    if not dense:
-                        del signal_paths[source]
-                else:
-                    signal_paths[destination] = [] 
-                active += 1
-        for i in signal_paths:
-            signal_paths[i].append(i)
-        activeY.append(active)
-
-    for signal_path in signal_paths.values():
-        lendiff = len(frames) - len(signal_path)
-        x = frames[lendiff:]
-        plt.plot(x, signal_path, marker='', color=color, linewidth=linewidth, alpha=alpha)
+                plt.plot(frames[i:i+2], [source, destination], linestyle='--')
 
     for i in ids:
         plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.5)
