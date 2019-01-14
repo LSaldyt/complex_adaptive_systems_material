@@ -26,14 +26,14 @@ anticolors = [c + (interactionOpacity,) for c in anticolors]
 
 def colorize(strength, discrete=True):
     if discrete:
-        return (1.0, 0.0, 0.0, norm(strength))
-    else:
         if strength > 0.749: # Alarmed threshold (Red)
             return (1.0, 0.0, 0.0)
         elif strength > 0.305: # Alert threshold (Blue)
             return (0.0, 0.0, 1.0)
         else: # Standard (White)
             return (1.0, 1.0, 1.0)
+    else:
+        return (1.0, 0.0, 0.0, norm(strength))
 
 
 def main(args):
