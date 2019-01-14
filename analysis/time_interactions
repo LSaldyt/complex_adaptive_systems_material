@@ -24,6 +24,18 @@ interactionOpacity = 1.0
 anticolors = [(0.0, 1.0, 1.0), (51/255, 51/255, 201/255), (204/255, 51/255, 255/255), (0.0, 1.0, 0.0), (1.0, 153/255, 1.0), (1.0, 204/255, 0.0), (153/255, 0.0, 153/255)]
 anticolors = [c + (interactionOpacity,) for c in anticolors]
 
+def colorize(strength, discrete=True):
+    if discrete:
+        return (1.0, 0.0, 0.0, norm(strength))
+    else:
+        if strength > 0.749: # Alarmed threshold (Red)
+            return (1.0, 0.0, 0.0)
+        elif strength > 0.305: # Alert threshold (Blue)
+            return (0.0, 0.0, 1.0)
+        else: # Standard (White)
+            return (1.0, 1.0, 1.0)
+
+
 def main(args):
     alarmData = pandas.read_csv('alarm_strengths.csv')
     assert len(args) == 1, 'Usage: ./time_interactions [data.csv]'
@@ -44,8 +56,9 @@ def main(args):
         i = alarmRow[0]
         strength = alarmRow[1]
         for j in ids:
-            plt.plot(frames[i:i+2], [j, j], color=(1.0, 0.0, 0.0, norm(strength[j])))
-        if i == 150: break;
+            plt.plot(frames[i:i+2], [j, j], color=colorize(strength[j]))
+        if i == 150:
+            break
         print(i)
     for i in frames:
         if i in interactions:
@@ -55,7 +68,9 @@ def main(args):
                 plt.plot([i,i+30], [source, destination], linestyle='--', marker='.', color=color,
                          linewidth=2.0, markersize=10,
                          dashes=(5, 5))
-        if i == 150: break;
+        print(i)
+        if i == 150:
+            break
 
     #for i in ids:
     #    #plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.5)
