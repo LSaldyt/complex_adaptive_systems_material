@@ -39,7 +39,7 @@ def colorize(strength, discrete=True):
 
 
 def main(args):
-    alarmData = pandas.read_csv('alarm_strengths.csv')
+    alarmData = pandas.read_csv('alarm_strengths_seconds.csv')
     assert len(args) == 1, 'Usage: ./time_interactions [data.csv]'
     filename = args[0]
 
@@ -49,7 +49,6 @@ def main(args):
         for line in lines[1:]:
             if line.strip() != '':
                 b, a, _, t = list(map(lambda s : int(s.strip()), line.split(',')))
-                t *= 30
                 interactions[t].append((a, b))
 
     frames = list(range(max(interactions.keys())))
@@ -58,26 +57,22 @@ def main(args):
         i = alarmRow[0]
         strength = alarmRow[1]
         for j in ids:
-            plt.plot(frames[i:i+2], [j, j], color=colorize(strength[j]))
-        if i == 150:
-            break
+            plt.plot([i, i+1], [j, j], color=colorize(strength[j]))
         print(i)
     for i in frames:
         if i in interactions:
             for j, interaction in enumerate(interactions[i]):
                 source, destination = interaction
                 color = anticolors[j % len(anticolors)]
-                plt.plot([i,i+30], [source, destination], linestyle='--', marker='.', color=color,
-                         linewidth=2.0, markersize=10,
+                plt.plot([i,i+1], [source, destination], linestyle='--', marker='.', color=color,
+                         linewidth=1.5, markersize=7,
                          dashes=(5, 5))
         print(i)
-        if i == 150:
-            break
 
     #for i in ids:
     #    #plt.plot(frames, [i] * len(frames), marker='', color='grey', linewidth=0.6, alpha=0.5)
 
-    time_unit_label = 'Frames (30hz)'
+    time_unit_label = 'Seconds (30hz)'
     
     plt.title('Temporal network interactions')
     plt.xlabel(time_unit_label)
