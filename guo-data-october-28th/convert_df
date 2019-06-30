@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import pandas
+
+
+alarmData = pandas.read_csv('alarm_strengths.csv')
+newData = pandas.DataFrame(columns=['frame', 'id', 'strength'])
+
+for index, row in alarmData.iterrows(): # Go over data by rows
+    for i in range(1, 62):
+        strength = getattr(row, 'V' + str(i))
+        newData = newData.append({'frame' : index, 'id' : i, 'strength' : strength}, ignore_index=True)
+    print(index)
+print(newData)
+newData.to_csv('alarm_strengths_long_form.csv')

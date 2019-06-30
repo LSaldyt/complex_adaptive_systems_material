@@ -7,7 +7,7 @@ import math
 import sys
 
 sns.set_style('darkgrid')
-alarmData = pandas.read_csv('alarm_strengths.csv')
+alarmData = pandas.read_csv('alarm_strengths_long_form.csv')
 
 def main(args):
     #colony = 71
@@ -20,54 +20,47 @@ def main(args):
         experiment = pandas.read_csv('C71Active1C.csv')
         control    = pandas.read_csv('C71Control1C.csv')
 
-    #experiment = pandas.read_csv('C71Active1C.csv')
-    #control    = pandas.read_csv('C71TA3T.csv')
+    period = 30 # Period in seconds
 
-    #plot_original(experiment, control, colony)
-    #experiment = experiment[(experiment['speed (px/s)'] > 3)]
-    #control    = control[(control['speed (px/s)'] > 3)]
-    
-    maxSpeed = 2.4
-    minSpeed = 0.0
-    period = 15 # Period in seconds
-
-    experiment['type'] = 'experiment'
-    control['type']    = 'control'
-    data = pandas.concat([experiment, control])
-    data['second'] = data['frames'] // 30 # Convert frames to seconds
+    data = alarmData
+    data['second'] = data['frame'] // 30 # Convert frames to seconds
     data['period'] = data['second'] // period # Define a period as thirty seconds
     print(data)
     #data = data.groupby('period')
 
     #data['speed'] = data['speed (px/s)'].apply(lambda x :  0 if x < 1e-7 else max(0, math.log(x, 10)))
-    data['speed'] = data['speed (px/s)'].apply(lambda x : max(minSpeed, min(x, maxSpeed)))
-    sns.violinplot(x='period', y='speed', hue='type', data=data, palette='muted', split=True, cut=True, inner='point')
+    #data['speed'] = data['speed (px/s)'].apply(lambda x : max(minSpeed, min(x, maxSpeed)))
+    sns.violinplot(x='period', y='strength', data=data, split=True, cut=True, color=(1.0, 0.4, 0.2), bw=0.05)#, inner='stick')
     plt.xlabel('Period ({} seconds)'.format(period))
-    plt.ylabel('Distribution of speeds in pixels/second')
+    plt.ylabel('Distribution of alarm strengths')
     #ticks = [1, 2, 3, 4]
     #labels = list(map(str, ticks))
     #labels[-1] += '+'
     #plt.yticks(ticks=ticks, labels=labels)
-    plt.title('Changes in the distribution of speeds over time for colony {}'.format(colony))
+    plt.axhline(y=0.74, linestyle='-', label='Alarmed threshold')
+    plt.axhline(y=0.35, color='g', linestyle='-', label='Alert threshold')
+
+    plt.title('Changes in the distribution of alarm strengths over time')
+    plt.legend()
     fig = matplotlib.pyplot.gcf()
-    fig.set_size_inches(8, 5)
+    fig.set_size_inches(12, 8)
     fig.savefig('violin_{}.png'.format(colony), dpi=300)
     plt.show()
 
 def plot_original(experiment, control, colony):
-    experiment_medians = experiment.groupby('frames').median()
-    control_medians    = control.groupby('frames').median()
+    experiment_medians = experiment.groupby('frame').median()
+    control_medians    = control.groupby('frame').median()
     #print(experiment_medians)
     #1/0
 
-    experiment_frames = experiment[experiment.id == 1]['frames'][1:]
+    experiment_frames = experiment[experiment.id == 1]['frame'][1:]
     experiment_speeds = experiment_medians['speed (px/s)'][1:]
-    control_frames    = control[control.id == 1]['frames'][1:]
+    control_frames    = control[control.id == 1]['frame'][1:]
     control_speeds    = control_medians['speed (px/s)'][1:]
 
     plt.plot(experiment_frames, experiment_speeds, color='orange')
     plt.plot(control_frames, control_speeds, color='black')
-    plt.xlabel('Frames (30hz)')
+    plt.xlabel('frames (30hz)')
     plt.ylabel('Average speed (px/s)')
     plt.title('Comparison between alarmed and control for colony 45 setting 1')
     plt.savefig('medians_{}.png'.format(colony))
